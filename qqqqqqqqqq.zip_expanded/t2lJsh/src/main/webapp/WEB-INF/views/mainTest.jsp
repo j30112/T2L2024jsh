@@ -32,7 +32,7 @@
         function calculateSum() {
             console.log("calculateSum start");
             let totalSum = 0;
-            let allChecked = 0;  // 모든 라디오 버튼이 선택되었는지 확인할 변수
+            let allChecked = 0;
 
             // 라디오 버튼을 하나씩 확인하여 체크된 값 합산
             sumRadios.forEach(radio => {
@@ -72,19 +72,116 @@
         sumRadios.forEach(radio => {
             radio.addEventListener('change', calculateSum);
         });
+        
+        
+        //글 작성란 추가, 삭제를 위한 변수 정의
+     	// 글 작성란 추가, 삭제를 위한 변수 정의
+        const wrapper = $('.seongGwa'); // 글쓰기 란을 추가할 클래스 선택
+        const addButton = $('#insertButt'); // 글쓰기 란 추가 버튼
+        var fieldCount = 1; // 글쓰기 란 갯수
+        var test= `aaaaaa`;
+
+     // 글쓰기 란 추가 함수
+        function addInsert(event) {
+            console.log('addInsert start...');
+            event.preventDefault(); // 페이지 새로고침 방지
+
+            fieldCount++; // 글쓰기 란 갯수 증가
+            console.log('fieldCount 증가:', fieldCount); // 증가된 fieldCount 출력
+
+            // 화면상에 글쓰기 란 추가
+            const newInput = `
+                <div class="seongGwaInput" data-field-count="`+fieldCount+`">
+                    <div class="seongGwaCTGR">
+                        <label class="ctgrTxt">카테고리</label>
+                        <select class="ctgrSelect" name="ctgrSelect_`+fieldCount+`">
+                            <option value="0" selected="selected">성과 종류를 선택해주세요</option>
+                            <option value="프로젝트 참여">프로젝트 참여</option>
+                            <option value="솔루션 개발">솔루션 개발</option>
+                            <option value="영업을 통한 매출개발">영업을 통한 매출개발</option>
+                            <option value="이익 개선">이익 개선</option>
+                            <option value="기타">기타</option>
+                        </select>
+                        
+                        <label class="ctgrTxt">달성률</label>
+                        <input type="text" placeholder="0~100 사이의 값을 입력해주세요" class="seongGwaPer" name="seongGwaPer_`+fieldCount+`">
+                        <label class="ctgrTxtperIcon">%</label>
+                        
+                        <button class="deleteButt">
+                            <img class="deleteButtImg" alt="삭제버튼" src="image/clodeButt.png">
+                        </button>
+                    </div>
+                    
+                    <div class="inputDetail">
+                        <textarea name="inputDetail_`+fieldCount+`"></textarea>
+                    </div>
+                </div>
+            `;
+
+            console.log('생성된 HTML:', newInput); // 생성된 HTML 확인
+
+            // 화면에 추가
+            wrapper.append(newInput.trim())
+        }
+     
+        // 글쓰기 란 삭제 함수
+        function deleteInsert(event) {
+            console.log('deleteInsert start...');
+            event.preventDefault(); // 페이지 새로고침 방지
+
+            const target = $(event.currentTarget); // 클릭된 버튼
+            const parentDiv = target.closest('.seongGwaInput'); // 해당 버튼의 부모 .seongGwaInput 찾기
+            parentDiv.remove(); // 부모 요소 제거
+            console.log('삭제 완료:', parentDiv.attr('data-field-count'));
+        }
+
+        // 이벤트 리스너 추가
+        addButton.on('click', addInsert);
+        wrapper.on('click', '.deleteButt', deleteInsert);
     });
+    
+  	function submitChk(){
+  		if(frm.jbgd_no.value == 0){
+  			alert('직위를 선택해주세요.');
+  			frm.jbgd_no.focus();
+  			return false;
+  		}
+  		if(!frm.wrt_nm.value){
+  			alert('이름을 입력해주세요.');
+  			frm.wrt_nm.focus();
+  			return false;
+  		}
+  		//카테고리 개수만큼 fot문을 돌려서 하나
+  		if(frm.wrt_nm.value){
+  			alert('이름을 입력해주세요.');
+  			frm.wrt_nm.focus();
+  			return false;
+  		}
+  		
+  		if(frm.sum_scr_a.value){
+  			alert('업무성과 환산점수를 입력해주세요.');
+  			frm.sum_scr_a.focus();
+  			return false;
+  		}
+  		if(frm.sum_scr_a.value){
+  			alert('업무성과 환산점수를 입력해주세요.');
+  			frm.sum_scr_a.focus();
+  			return false;
+  		}
+  	}
+    
 </script>
 
 
 
 
 
-
+<a href="mmmm"></a>
 
 
 <body>
 	
-	<form action="formSubmit">
+	<form action="formSubmit" name="frm">
 		<div class="info">
 			<label id="ttl">평가서</label>
 			<p>
@@ -93,7 +190,7 @@
 			
 			<div class="userInfo">
 				<label class="userInfoTxt">직위</label>
-				<select name="iserPositionValue" class="userInfoInsert1">
+				<select name="jbgd_no" class="userInfoInsert1" >
 					<option value="0" selected="selected">직위를 선택해주세요</option>
 					<option value="부장">부장</option>
 					<option value="차장">차장</option>
@@ -104,7 +201,7 @@
 				</select>
 				
 				<label class="userInfoTxt">성명</label>
-				<input type="text" placeholder="성명을 입력해주세요" class="userInfoInsert">
+				<input type="text" placeholder="성명을 입력해주세요" class="userInfoInsert" name="wrt_nm">
 			</div>
 		</div>
 		
@@ -122,7 +219,7 @@
 			<div class="seongGwaInput">
 				<div class="seongGwaCTGR">
 					<label class="ctgrTxt">카테고리</label>
-					<select id="ctgrSelect">
+					<select class="ctgrSelect">
 						<option value="0" selected="selected">성과 종류를 선택해주세요</option>
 						<option value="프로젝트 참여">프로젝트 참여</option>
 						<option value="솔루션 개발">솔루션 개발</option>
@@ -132,18 +229,19 @@
 					</select>
 					
 					<label class="ctgrTxt">달성률</label>
-						<input type="text" placeholder="0~100 사이의 값을 입력해주세요" id="seongGwaPer">
-						<label id="ctgrTxtperIcon">%</label>
+						<input type="text" placeholder="0~100 사이의 값을 입력해주세요" class="seongGwaPer">
+						<label class="ctgrTxtperIcon">%</label>
+					
 				</div>
 				
-				<div id="inputDetail">
+				<div class="inputDetail">
 					<textarea></textarea>
 				</div>
 			</div>
 		</div>
 		<div class="scoreA">
 			<label>A. 업무성과 환산점수(70점 만점)</label>
-			<input type="number" id="scoreAInput" min="0" max="70" step="1">
+			<input type="number" id="scoreAInput" min="0" max="70" step="1" name="sum_scr_a">
 		</div>
 		
 		
@@ -526,11 +624,11 @@
 				<table border="1">
 					<tr>
 						<td id="opinionTd1">1차 평가자
-							<br> ( <input type="text" placeholder="평가자"> ) 
+							<br> ( <input type="text" placeholder="평가자" name="evltr_nm1"> ) 
 						</td>
-						<td id="opinionTd2"><textarea class="textareaOpinion"></textarea></td>
+						<td id="opinionTd2"><textarea class="textareaOpinion" name="evl_cn1"></textarea></td>
 						<td id="opinionTd3">등급
-							<br> <select>
+							<br> <select name="evl_rslt_cn1">
 									<option value="0" selected="selected">등급 선택</option>
 									<option value="S">S</option>
 									<option value="A">A</option>
@@ -544,9 +642,9 @@
 					
 					<tr>
 						<td>대표이사</td>
-						<td><textarea class="textareaOpinion"></textarea></td>
+						<td><textarea class="textareaOpinion" name="evl_cn_ceo"></textarea></td>
 						<td>등급
-							<br> <select>
+							<br> <select name="evl_rslt_cn_ceo">
 									<option value="0" selected="selected">등급 선택</option>
 									<option value="S">S</option>
 									<option value="A">A</option>
@@ -566,7 +664,7 @@
 		
 		
 		<div class="submitButtCenter">
-			<button type="submit" id="submitButt">평가서 제출</button>
+			<button type="button" id="submitButt" onclick="submitChk()">평가서 제출</button>
 		</div>
 	</form>
 </body>
