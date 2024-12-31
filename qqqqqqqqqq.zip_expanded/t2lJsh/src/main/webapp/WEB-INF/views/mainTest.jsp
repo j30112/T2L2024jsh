@@ -24,6 +24,7 @@
         
         // sumId라는 ID를 가진 input 요소를 선택
         const sumInput = document.getElementById('sumId');  
+        const sum_scr_bInput = document.getElementById('scoreBNum');  
         
         // scoreAInput 값 가져오기
         const scoreAInput = document.getElementById('scoreAInput');
@@ -48,6 +49,7 @@
             if (allChecked == sumRadioCnt) {
                 console.log("All radios checked, totalSum: " + totalSum);
                 sumInput.value = totalSum + "점";  // 계산된 값을 sumId input의 value로 설정
+                sum_scr_bInput.value = totalSum;
 
                 // scoreAInput 값이 입력된 경우 totalSum과 합산하여 출력
                 if (scoreAInput.value.trim() !== "") {
@@ -78,7 +80,7 @@
      	// 글 작성란 추가, 삭제를 위한 변수 정의
         const wrapper = $('.seongGwa'); // 글쓰기 란을 추가할 클래스 선택
         const addButton = $('#insertButt'); // 글쓰기 란 추가 버튼
-        var fieldCount = 1; // 글쓰기 란 갯수
+        var fieldCount = 2; // 글쓰기 란 갯수
         var test= `aaaaaa`;
 
      // 글쓰기 란 추가 함수
@@ -113,7 +115,7 @@
                     </div>
                     
                     <div class="inputDetail">
-                        <textarea name="inputDetail_`+fieldCount+`"></textarea>
+                        <textarea name="prfmnc_cn_`+fieldCount+`"></textarea>
                     </div>
                 </div>
             `;
@@ -140,10 +142,10 @@
         wrapper.on('click', '.deleteButt', deleteInsert);
     });
     
-  	function submitChk(){
-  		if(frm.jbgd_no.value == 0){
+  	/* function submitChk(){
+  		if(frm.jbgd_nm.value == 0){
   			alert('직위를 선택해주세요.');
-  			frm.jbgd_no.focus();
+  			frm.jbgd_nm.focus();
   			return false;
   		}
   		if(!frm.wrt_nm.value){
@@ -168,7 +170,7 @@
   			frm.sum_scr_a.focus();
   			return false;
   		}
-  	}
+  	} */
     
 </script>
 
@@ -181,7 +183,7 @@
 
 <body>
 	
-	<form action="formSubmit" name="frm">
+	<form action="/formSubmit" name="frm">
 		<div class="info">
 			<label id="ttl">평가서</label>
 			<p>
@@ -190,7 +192,7 @@
 			
 			<div class="userInfo">
 				<label class="userInfoTxt">직위</label>
-				<select name="jbgd_no" class="userInfoInsert1" >
+				<select name="jbgd_nm" class="userInfoInsert1" >
 					<option value="0" selected="selected">직위를 선택해주세요</option>
 					<option value="부장">부장</option>
 					<option value="차장">차장</option>
@@ -219,7 +221,7 @@
 			<div class="seongGwaInput">
 				<div class="seongGwaCTGR">
 					<label class="ctgrTxt">카테고리</label>
-					<select class="ctgrSelect">
+					<select class="ctgrSelect" name="ctgrSelect_1">
 						<option value="0" selected="selected">성과 종류를 선택해주세요</option>
 						<option value="프로젝트 참여">프로젝트 참여</option>
 						<option value="솔루션 개발">솔루션 개발</option>
@@ -229,13 +231,13 @@
 					</select>
 					
 					<label class="ctgrTxt">달성률</label>
-						<input type="text" placeholder="0~100 사이의 값을 입력해주세요" class="seongGwaPer">
+						<input type="number" placeholder="0~100 사이의 값을 입력해주세요" class="seongGwaPer" name="ajmt_rt_1">
 						<label class="ctgrTxtperIcon">%</label>
 					
 				</div>
 				
 				<div class="inputDetail">
-					<textarea></textarea>
+					<textarea name="prfmnc_cn_1"></textarea>
 				</div>
 			</div>
 		</div>
@@ -251,7 +253,7 @@
 			</div>
 			
 			<div id="inputDetail">
-				<textarea></textarea>
+				<textarea name="dmnd_mtr"></textarea>
 			</div>
 		</div>
 		
@@ -287,9 +289,9 @@
 				        </tr>
 				        <tr>
 				            <td>1차 평가자</td>
-					            <td><input type="radio" name="1chaQItemNo1" value="3"></td>
-					            <td><input type="radio" name="1chaQItemNo1" value="2"></td>
-					            <td><input type="radio" name="1chaQItemNo1" value="1"></td>
+					            <td><input type="radio" name="ilChaQItemNo1" value="3"></td>
+					            <td><input type="radio" name="ilChaQItemNo1" value="2"></td>
+					            <td><input type="radio" name="ilChaQItemNo1" value="1"></td>
 				        </tr>
 				        <tr>
 				        	<td rowspan="2" class="tdLeft">2. 규정이해도</td>
@@ -301,9 +303,9 @@
 				        </tr>
 				        <tr>
 				            <td>1차 평가자</td>
-			            	<td><input type="radio" name="1chaQItemNo2" value="3"></td>
-				            <td><input type="radio" name="1chaQItemNo2" value="2"></td>
-				            <td><input type="radio" name="1chaQItemNo2" value="1"></td>
+			            	<td><input type="radio" name="ilChaQItemNo2" value="3"></td>
+				            <td><input type="radio" name="ilChaQItemNo2" value="2"></td>
+				            <td><input type="radio" name="ilChaQItemNo2" value="1"></td>
 				        </tr>
 				        
 				        
@@ -317,9 +319,9 @@
 				        </tr>
 				        <tr>
 				            	<td>1차 평가자</td>
-				            	<td><input type="radio" name="1chaQItemNo3" value="3"></td>
-					            <td><input type="radio" name="1chaQItemNo3" value="2"></td>
-					            <td><input type="radio" name="1chaQItemNo3" value="1"></td>
+				            	<td><input type="radio" name="ilChaQItemNo3" value="3"></td>
+					            <td><input type="radio" name="ilChaQItemNo3" value="2"></td>
+					            <td><input type="radio" name="ilChaQItemNo3" value="1"></td>
 				        </tr>
 				        
 				        
@@ -333,9 +335,9 @@
 				        </tr>
 				        <tr>
 				            	<td>1차 평가자</td>
-				            	<td><input type="radio" name="1chaQItemNo4" value="3"></td>
-					            <td><input type="radio" name="1chaQItemNo4" value="2"></td>
-					            <td><input type="radio" name="1chaQItemNo4" value="1"></td>
+				            	<td><input type="radio" name="ilChaQItemNo4" value="3"></td>
+					            <td><input type="radio" name="ilChaQItemNo4" value="2"></td>
+					            <td><input type="radio" name="ilChaQItemNo4" value="1"></td>
 				        </tr>
 				        
 				        
@@ -349,9 +351,9 @@
 				        </tr>
 				        <tr>
 				            	<td>1차 평가자</td>
-				            	<td><input type="radio" name="1chaQItemNo5" value="3"></td>
-					            <td><input type="radio" name="1chaQItemNo5" value="2"></td>
-					            <td><input type="radio" name="1chaQItemNo5" value="1"></td>
+				            	<td><input type="radio" name="ilChaQItemNo5" value="3"></td>
+					            <td><input type="radio" name="ilChaQItemNo5" value="2"></td>
+					            <td><input type="radio" name="ilChaQItemNo5" value="1"></td>
 				        </tr>
 				        
 				        
@@ -367,9 +369,9 @@
 				        </tr>
 				        <tr>
 			            	<td>1차 평가자</td>
-			            	<td><input type="radio" name="1chaQItemNo6" value="3"></td>
-				            <td><input type="radio" name="1chaQItemNo6" value="2"></td>
-				            <td><input type="radio" name="1chaQItemNo6" value="1"></td>
+			            	<td><input type="radio" name="ilChaQItemNo6" value="3"></td>
+				            <td><input type="radio" name="ilChaQItemNo6" value="2"></td>
+				            <td><input type="radio" name="ilChaQItemNo6" value="1"></td>
 				        </tr>
 				        
 				        
@@ -383,9 +385,9 @@
 				        </tr>
 				        <tr>
 			            	<td>1차 평가자</td>
-			            	<td><input type="radio" name="1chaQItemNo7" value="3"></td>
-				            <td><input type="radio" name="1chaQItemNo7" value="2"></td>
-				            <td><input type="radio" name="1chaQItemNo7" value="1"></td>
+			            	<td><input type="radio" name="ilChaQItemNo7" value="3"></td>
+				            <td><input type="radio" name="ilChaQItemNo7" value="2"></td>
+				            <td><input type="radio" name="ilChaQItemNo7" value="1"></td>
 				        </tr>
 				        
 				        
@@ -399,9 +401,9 @@
 				        </tr>
 				        <tr>
 			            	<td>1차 평가자</td>
-			            	<td><input type="radio" name="1chaQItemNo8" value="3"></td>
-				            <td><input type="radio" name="1chaQItemNo8" value="2"></td>
-				            <td><input type="radio" name="1chaQItemNo8" value="1"></td>
+			            	<td><input type="radio" name="ilChaQItemNo8" value="3"></td>
+				            <td><input type="radio" name="ilChaQItemNo8" value="2"></td>
+				            <td><input type="radio" name="ilChaQItemNo8" value="1"></td>
 				        </tr>
 				        
 				        
@@ -415,9 +417,9 @@
 				        </tr>
 				        <tr>
 			            	<td>1차 평가자</td>
-			            	<td><input type="radio" name="1chaQItemNo9" value="3"></td>
-				            <td><input type="radio" name="1chaQItemNo9" value="2"></td>
-				            <td><input type="radio" name="1chaQItemNo9" value="1"></td>
+			            	<td><input type="radio" name="ilChaQItemNo9" value="3"></td>
+				            <td><input type="radio" name="ilChaQItemNo9" value="2"></td>
+				            <td><input type="radio" name="ilChaQItemNo9" value="1"></td>
 				        </tr>
 				        
 				        
@@ -431,15 +433,15 @@
 				        </tr>
 				        <tr>
 			            	<td>1차 평가자</td>
-			            	<td><input type="radio" name="1chaQItemNo10" value="3"></td>
-				            <td><input type="radio" name="1chaQItemNo10" value="2"></td>
-				            <td><input type="radio" name="1chaQItemNo10" value="1"></td>
+			            	<td><input type="radio" name="ilChaQItemNo10" value="3"></td>
+				            <td><input type="radio" name="ilChaQItemNo10" value="2"></td>
+				            <td><input type="radio" name="ilChaQItemNo10" value="1"></td>
 				        </tr>
 				        
 				        <tr>
 				        	<td colspan="4" id="scoreB">B. 업무 능력 점수(30점 만점)</td>
 				        	<td colspan="4"><input id="sumId" value="점수 합산 결과" readonly="readonly"></td>
-				        	<td><input type="hidden" id="scoreBNum" value="0"></td>
+				        	<td><input type="hidden" id="scoreBNum" value="0" name="sum_scr_b"></td>
 				        </tr>
 				        <tr>
 				        	<td colspan="4" id="scoreAB">자기 평가 합계(A + B)</td>
@@ -456,20 +458,20 @@
 				            <td>하<br>(1점)</td>
 				        </tr>
 				        <tr>
-				            <td rowspan="18">업무능력평가</td>
+				            <td rowspan="18">기술적 성취</td>
 				            <td rowspan="8">퍼블리싱</td>
 				            <td rowspan="2" class="tdLeft">1. HTML/CSS</td>
 				            <td rowspan="2" class="tdLeft">디자인대로 퍼블리싱 할 수 있는 기본기</td>
 				            <td>자기평가</td>
-					            <td><input type="radio" name="2qItemNo1" value="3"></td>
-					            <td><input type="radio" name="2qItemNo1" value="2"></td>
-					            <td><input type="radio" name="2qItemNo1" value="1"></td>
+					            <td><input type="radio" name="twoQItemNo1" value="3"></td>
+					            <td><input type="radio" name="twoQItemNo1" value="2"></td>
+					            <td><input type="radio" name="twoQItemNo1" value="1"></td>
 				        </tr>
 				        <tr>
 				            <td>2차 평가자</td>
-					            <td><input type="radio" name="2chaQItemNo1" value="3"></td>
-					            <td><input type="radio" name="2chaQItemNo1" value="2"></td>
-					            <td><input type="radio" name="2chaQItemNo1" value="1"></td>
+					            <td><input type="radio" name="twoChaQItemNo1" value="3"></td>
+					            <td><input type="radio" name="twoChaQItemNo1" value="2"></td>
+					            <td><input type="radio" name="twoChaQItemNo1" value="1"></td>
 				        </tr>
 				        
 				        
@@ -477,15 +479,15 @@
 				        	<td rowspan="2" class="tdLeft">2. 확장성</td>
 				            <td rowspan="2" class="tdLeft">제 3자가 읽기 쉽고 수정하기 용이하게 코딩할 수 있는 능력,<br>콘텐츠 가변 가능성을 고려한 코딩 능력</td>
 				            <td>자기평가</td>
-				            	<td><input type="radio" name="2qItemNo2" value="3"></td>
-					            <td><input type="radio" name="2qItemNo2" value="2"></td>
-					            <td><input type="radio" name="2qItemNo2" value="1"></td>
+				            	<td><input type="radio" name="twoQItemNo2" value="3"></td>
+					            <td><input type="radio" name="twoQItemNo2" value="2"></td>
+					            <td><input type="radio" name="twoQItemNo2" value="1"></td>
 				        </tr>
 				        <tr>
 				            <td>2차 평가자</td>
-			            	<td><input type="radio" name="2chaQItemNo2" value="3"></td>
-				            <td><input type="radio" name="2chaQItemNo2" value="2"></td>
-				            <td><input type="radio" name="2chaQItemNo2" value="1"></td>
+			            	<td><input type="radio" name="twoChaQItemNo2" value="3"></td>
+				            <td><input type="radio" name="twoChaQItemNo2" value="2"></td>
+				            <td><input type="radio" name="twoChaQItemNo2" value="1"></td>
 				        </tr>
 				        
 				        
@@ -493,15 +495,15 @@
 				        	<td rowspan="2" class="tdLeft">3. 웹표준</td>
 				            <td rowspan="2" class="tdLeft">웹표준에 대한 지식</td>
 				            <td>자기평가</td>
-				            	<td><input type="radio" name="2qItemNo3" value="3"></td>
-					            <td><input type="radio" name="2qItemNo3" value="2"></td>
-					            <td><input type="radio" name="2qItemNo3" value="1"></td>
+				            	<td><input type="radio" name="twoQItemNo3" value="3"></td>
+					            <td><input type="radio" name="twoQItemNo3" value="2"></td>
+					            <td><input type="radio" name="twoQItemNo3" value="1"></td>
 				        </tr>
 				        <tr>
-				            <td>2차 평가자</td>
-			            	<td><input type="radio" name="2chaQItemNo3" value="3"></td>
-				            <td><input type="radio" name="2chaQItemNo3" value="2"></td>
-				            <td><input type="radio" name="2chaQItemNo3" value="1"></td>
+				            <td>3차 평가자</td>
+			            	<td><input type="radio" name="twoChaQItemNo3" value="3"></td>
+				            <td><input type="radio" name="twoChaQItemNo3" value="2"></td>
+				            <td><input type="radio" name="twoChaQItemNo3" value="1"></td>
 				        </tr>
 				        
 				        
@@ -509,15 +511,15 @@
 				        	<td rowspan="2" class="tdLeft">4. 반응형 퍼블리싱</td>
 				            <td rowspan="2" class="tdLeft">정해진 규격 안에서 형태가 망가지지 않도록 코딩할 수 있는 능력</td>
 				            <td>자기평가</td>
-				            	<td><input type="radio" name="2qItemNo4" value="3"></td>
-					            <td><input type="radio" name="2qItemNo4" value="2"></td>
-					            <td><input type="radio" name="2qItemNo4" value="1"></td>
+				            	<td><input type="radio" name="twoQItemNo4" value="3"></td>
+					            <td><input type="radio" name="twoQItemNo4" value="2"></td>
+					            <td><input type="radio" name="twoQItemNo4" value="1"></td>
 				        </tr>
 				        <tr>
-				            <td>2차 평가자</td>
-			            	<td><input type="radio" name="2chaQItemNo4" value="3"></td>
-				            <td><input type="radio" name="2chaQItemNo4" value="2"></td>
-				            <td><input type="radio" name="2chaQItemNo4" value="1"></td>
+				            <td>3차 평가자</td>
+			            	<td><input type="radio" name="twoChaQItemNo4" value="3"></td>
+				            <td><input type="radio" name="twoChaQItemNo4" value="2"></td>
+				            <td><input type="radio" name="twoChaQItemNo4" value="1"></td>
 				        </tr>
 				        
 				        
@@ -526,15 +528,15 @@
 				        	<td rowspan="2" class="tdLeft">1. JQUERY</td>
 				        	<td rowspan="2" class="tdLeft">jquery를 사용하여 최소한의 프론트엔드 개발 할 수 있는 능력</td>
 				        	<td>자기평가</td>
-				        		<td><input type="radio" name="2qItemNo5" value="3"></td>
-					            <td><input type="radio" name="2qItemNo5" value="2"></td>
-					            <td><input type="radio" name="2qItemNo5" value="1"></td>
+				        		<td><input type="radio" name="twoQItemNo5" value="3"></td>
+					            <td><input type="radio" name="twoQItemNo5" value="2"></td>
+					            <td><input type="radio" name="twoQItemNo5" value="1"></td>
 				        </tr>
 				        <tr>
-				            <td>2차 평가자</td>
-			            	<td><input type="radio" name="2chaQItemNo5" value="3"></td>
-				            <td><input type="radio" name="2chaQItemNo5" value="2"></td>
-				            <td><input type="radio" name="2chaQItemNo5" value="1"></td>
+				            <td>4차 평가자</td>
+			            	<td><input type="radio" name="twoChaQItemNo5" value="3"></td>
+				            <td><input type="radio" name="twoChaQItemNo5" value="2"></td>
+				            <td><input type="radio" name="twoChaQItemNo5" value="1"></td>
 				        </tr>
 				        
 				        
@@ -543,15 +545,15 @@
 				        	<td rowspan="2" class="tdLeft">자바스크립트 지식. 라이브러리 도움 없이 프론트 개발 가능 한지. 
 				        					<br>비동기,동기에 대한 차이 이해, Promise 함수에 대한 이해와 활용 가능성</td>
 				        	<td>자기평가</td>
-				        		<td><input type="radio" name="2qItemNo6" value="3"></td>
-					            <td><input type="radio" name="2qItemNo6" value="2"></td>
-					            <td><input type="radio" name="2qItemNo6" value="1"></td>
+				        		<td><input type="radio" name="twoQItemNo6" value="3"></td>
+					            <td><input type="radio" name="twoQItemNo6" value="2"></td>
+					            <td><input type="radio" name="twoQItemNo6" value="1"></td>
 				        </tr>
 				        <tr>
-				            <td>2차 평가자</td>
-			            	<td><input type="radio" name="2chaQItemNo6" value="3"></td>
-				            <td><input type="radio" name="2chaQItemNo6" value="2"></td>
-				            <td><input type="radio" name="2chaQItemNo6" value="1"></td>
+				            <td>4차 평가자</td>
+			            	<td><input type="radio" name="twoChaQItemNo6" value="3"></td>
+				            <td><input type="radio" name="twoChaQItemNo6" value="2"></td>
+				            <td><input type="radio" name="twoChaQItemNo6" value="1"></td>
 				        </tr>
 				        
 				        
@@ -559,15 +561,15 @@
 				        	<td rowspan="2" class="tdLeft">3. API 활용</td>
 				        	<td rowspan="2" class="tdLeft">ajax,fetch 등을 사용하여 API  호출하여 리턴값을 자유자재 활용 가능 여부</td>
 				        	<td>자기평가</td>
-				        		<td><input type="radio" name="2qItemNo7" value="3"></td>
-					            <td><input type="radio" name="2qItemNo7" value="2"></td>
-					            <td><input type="radio" name="2qItemNo7" value="1"></td>
+				        		<td><input type="radio" name="twoQItemNo7" value="3"></td>
+					            <td><input type="radio" name="twoQItemNo7" value="2"></td>
+					            <td><input type="radio" name="twoQItemNo7" value="1"></td>
 				        </tr>
 				        <tr>
-				            <td>2차 평가자</td>
-			            	<td><input type="radio" name="2chaQItemNo7" value="3"></td>
-				            <td><input type="radio" name="2chaQItemNo7" value="2"></td>
-				            <td><input type="radio" name="2chaQItemNo7" value="1"></td>
+				            <td>5차 평가자</td>
+			            	<td><input type="radio" name="twoChaQItemNo7" value="3"></td>
+				            <td><input type="radio" name="twoChaQItemNo7" value="2"></td>
+				            <td><input type="radio" name="twoChaQItemNo7" value="1"></td>
 				        </tr>
 				        
 				        
@@ -579,15 +581,15 @@
 				        	<td rowspan="2" class="tdLeft">본인이 실무에 사용하는 언어로 기본적인 DB 연결, 
 				        					<br>호출이 가능한지, API를 생성하여 프론트로 값을 넘겨줄 수 있는지.</td>
 				        	<td>자기평가</td>
-				        		<td><input type="radio" name="2qItemNo8" value="3"></td>
-					            <td><input type="radio" name="2qItemNo8" value="2"></td>
-					            <td><input type="radio" name="2qItemNo8" value="1"></td>
+				        		<td><input type="radio" name="twoQItemNo8" value="3"></td>
+					            <td><input type="radio" name="twoQItemNo8" value="2"></td>
+					            <td><input type="radio" name="twoQItemNo8" value="1"></td>
 				        </tr>
 				        <tr>
-				            <td>2차 평가자</td>
-			            	<td><input type="radio" name="2chaQItemNo8" value="3"></td>
-				            <td><input type="radio" name="2chaQItemNo8" value="2"></td>
-				            <td><input type="radio" name="2chaQItemNo8" value="1"></td>
+				            <td>5차 평가자</td>
+			            	<td><input type="radio" name="twoChaQItemNo8" value="3"></td>
+				            <td><input type="radio" name="twoChaQItemNo8" value="2"></td>
+				            <td><input type="radio" name="twoChaQItemNo8" value="1"></td>
 				        </tr>
 				        
 				        
@@ -596,15 +598,15 @@
 				        	<td rowspan="2" class="tdLeft">직접 쿼리문 작성 가능, JOIN문, 서브쿼리 자유자재로 활용 가능한지, 
 				        					<br>테이블 직접 설계 가능한지.</td>
 				        	<td>자기평가</td>
-				        		<td><input type="radio" name="2qItemNo9" value="3"></td>
-					            <td><input type="radio" name="2qItemNo9" value="2"></td>
-					            <td><input type="radio" name="2qItemNo9" value="1"></td>
+				        		<td><input type="radio" name="twoQItemNo9" value="3"></td>
+					            <td><input type="radio" name="twoQItemNo9" value="2"></td>
+					            <td><input type="radio" name="twoQItemNo9" value="1"></td>
 				        </tr>
 				        <tr>
-				            <td>2차 평가자</td>
-			            	<td><input type="radio" name="2chaQItemNo9" value="3"></td>
-				            <td><input type="radio" name="2chaQItemNo9" value="2"></td>
-				            <td><input type="radio" name="2chaQItemNo9" value="1"></td>
+				            <td>6차 평가자</td>
+			            	<td><input type="radio" name="twoChaQItemNo9" value="3"></td>
+				            <td><input type="radio" name="twoChaQItemNo9" value="2"></td>
+				            <td><input type="radio" name="twoChaQItemNo9" value="1"></td>
 				        </tr>
 				</table>
 				
@@ -626,7 +628,9 @@
 						<td id="opinionTd1">1차 평가자
 							<br> ( <input type="text" placeholder="평가자" name="evltr_nm1"> ) 
 						</td>
-						<td id="opinionTd2"><textarea class="textareaOpinion" name="evl_cn1"></textarea></td>
+						<td id="opinionTd2">
+							<textarea class="textareaOpinion" name="evl_cn1"></textarea>
+						</td>
 						<td id="opinionTd3">등급
 							<br> <select name="evl_rslt_cn1">
 									<option value="0" selected="selected">등급 선택</option>
@@ -664,7 +668,8 @@
 		
 		
 		<div class="submitButtCenter">
-			<button type="button" id="submitButt" onclick="submitChk()">평가서 제출</button>
+			<!-- <button type="button" id="submitButt" onclick="submitChk()">평가서 제출</button> -->
+			<button type="submit" id="submitButt">평가서 제출</button>
 		</div>
 	</form>
 </body>
