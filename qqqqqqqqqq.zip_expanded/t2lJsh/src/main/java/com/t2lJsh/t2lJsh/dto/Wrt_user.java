@@ -1,11 +1,13 @@
 package com.t2lJsh.t2lJsh.dto;
 
+import java.sql.Date;
+
 import lombok.Data;
 
 @Data
 public class Wrt_user {
-	String 	doc_no;	//평가서 번호
-	String 	jbgd_no;//직위
-	String 	wrt_nm;	//이름
-	String 	wrt_tm;	//제출시간
+	private int		doc_no;		//평가서 번호
+	private String 	jbgd_nm;//직위
+	private String 	wrt_nm;	//이름
+	private Date 	wrt_tm;	//제출시간
 }

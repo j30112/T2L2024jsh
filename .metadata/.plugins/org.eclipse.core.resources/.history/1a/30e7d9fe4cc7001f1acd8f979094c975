@@ -1,0 +1,67 @@
+package com.t2lJsh.t2lJsh.dto;
+
+import lombok.Data;
+
+@Data
+public class Assessmt {
+	private String	se_no;		//평가 구분번호
+	private String	EVLTR_NM;	//평가자명
+	private String	doc_no;		//평가서 번호
+	private int		qitem_no1;	//문항1 답변
+	private int		qitem_no2;	//문항2 답변
+	private int		qitem_no3;	//문항3 답변
+	private int		qitem_no4;	//문항4 답변
+	private int		qitem_no5;	//문항5 답변
+	private int		qitem_no6;	//문항6 답변
+	private int		qitem_no7;	//문항7 답변
+	private int		qitem_no8;	//문항8 답변
+	private int		qitem_no9;	//문항9 답변
+	private int		qitem_no10;	//문항10 답변
+	private int		sum_scr_b;	//점수 합계
+	
+	////////////버퍼용
+	
+	private int currentval;	//wrt_user에서 doc_no가져와서 세팅
+	
+	private int qItemNo1;//업무능력평가 자기평가1
+	private int qItemNo2;//업무능력평가 자기평가2
+	private int qItemNo3;//업무능력평가 자기평가3
+	private int qItemNo4;//업무능력평가 자기평가4
+	private int qItemNo5;//업무능력평가 자기평가5
+	private int qItemNo6;//업무능력평가 자기평가6
+	private int qItemNo7;//업무능력평가 자기평가7
+	private int qItemNo8;//업무능력평가 자기평가8
+	private int qItemNo9;//업무능력평가 자기평가9
+	private int qItemNo10;//업무능력평가 자기평가10
+	
+	private int ilChaQItemNo1; //업무능력평가 1차 평가자
+	private int ilChaQItemNo2; //업무능력평가 1차 평가자
+	private int ilChaQItemNo3; //업무능력평가 1차 평가자
+	private int ilChaQItemNo4; //업무능력평가 1차 평가자
+	private int ilChaQItemNo5; //업무능력평가 1차 평가자
+	private int ilChaQItemNo6; //업무능력평가 1차 평가자
+	private int ilChaQItemNo7; //업무능력평가 1차 평가자
+	private int ilChaQItemNo8; //업무능력평가 1차 평가자
+	private int ilChaQItemNo9; //업무능력평가 1차 평가자
+	private int ilChaQItemNo10; //업무능력평가 1차 평가자
+	
+	private int twoQItemNo1;	//기술적 성취 자기 평가
+	private int twoQItemNo2;	//기술적 성취 자기 평가
+	private int twoQItemNo3;	//기술적 성취 자기 평가
+	private int twoQItemNo4;	//기술적 성취 자기 평가
+	private int twoQItemNo5;	//기술적 성취 자기 평가
+	private int twoQItemNo6;	//기술적 성취 자기 평가
+	private int twoQItemNo7;	//기술적 성취 자기 평가
+	private int twoQItemNo8;	//기술적 성취 자기 평가
+	private int twoQItemNo9;	//기술적 성취 자기 평가
+	
+	private int twoChaQItemNo1;	//기술적 성취 2차 평가자
+	private int twoChaQItemNo2;	//기술적 성취 2차 평가자
+	private int twoChaQItemNo3;	//기술적 성취 2차 평가자
+	private int twoChaQItemNo4;	//기술적 성취 2차 평가자
+	private int twoChaQItemNo5;	//기술적 성취 2차 평가자
+	private int twoChaQItemNo6;	//기술적 성취 2차 평가자
+	private int twoChaQItemNo7;	//기술적 성취 2차 평가자
+	private int twoChaQItemNo8;	//기술적 성취 2차 평가자
+	private int twoChaQItemNo9;	//기술적 성취 2차 평가자
+}

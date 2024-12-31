@@ -1,0 +1,13 @@
+package com.t2lJsh.t2lJsh.service;
+
+import com.t2lJsh.t2lJsh.dto.Wrt_user;
+
+public interface T2lService {
+
+	/* String test2(); */
+
+	String quaterPeriod(String string);
+
+	int insertWrtUser(Wrt_user wrtUser);
+
+}

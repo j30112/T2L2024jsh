@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+	<style>
+		.headerBody{
+			width: 91px;
+			height: 1920px;
+		}
+		
+		img {
+			height: 1920px;
+		}
+	</style>
+
+<body>
+	
+	<div class="headerBody">
+		<img alt="T2L로고" src="image/t2lLogo.png">
+	
+	</div>
+		
+</body>
+</html>

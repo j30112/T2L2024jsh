@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<setting name="jdbcTypeForNull" value="VARCHAR"/>
+	</settings>
+
+	<typeAliases>
+		<typeAlias alias="Test01" type="com.t2lJsh.t2lJsh.dto.Test01" />
+		<!-- com.t2lJsh.t2lJsh.dto   DTO설정할 때 DTO의 상단에 있는 패키지 이름을 가져와야 함 -->
+		<typeAlias alias="Assessmt" type="com.t2lJsh.t2lJsh.dto.Assessmt" />
+		<typeAlias alias="formInfor" type="com.t2lJsh.t2lJsh.dto.formInfor" />
+		<typeAlias alias="Opinion" type="com.t2lJsh.t2lJsh.dto.Opinion" />
+		<typeAlias alias="Wish_req" type="com.t2lJsh.t2lJsh.dto.Wish_req" />
+		<typeAlias alias="Work_perform" type="com.t2lJsh.t2lJsh.dto.Work_perform" />
+		<typeAlias alias=Wrt_user type="com.t2lJsh.t2lJsh.dto.Wrt_user" />
+		
+		
+	</typeAliases>
+</configuration> 

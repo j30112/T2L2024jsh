@@ -1,0 +1,11 @@
+package com.t2lJsh.t2lJsh.dto;
+
+import lombok.Data;
+
+@Data
+public class Wrt_user {
+	String 	doc_no;	//평가서 번호
+	String 	JBGD_NM;//직위
+	String 	wrt_nm;	//이름
+	String 	wrt_tm;	//제출시간
+}

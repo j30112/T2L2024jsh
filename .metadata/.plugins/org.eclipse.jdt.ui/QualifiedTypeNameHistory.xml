@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.StrictMath"/>
+    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="lombok.Data"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="com.t2lJsh.t2lJsh.dto.formInfor"/>
+    <fullyQualifiedTypeName name="com.t2lJsh.t2lJsh.dto.Opinion"/>
+    <fullyQualifiedTypeName name="com.t2lJsh.t2lJsh.dto.Wish_req"/>
+    <fullyQualifiedTypeName name="com.t2lJsh.t2lJsh.dto.Work_perform"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+    <fullyQualifiedTypeName name="lombok.extern.slf4j.Slf4j"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
+    <fullyQualifiedTypeName name="com.t2lJsh.t2lJsh.dto.Assessmt"/>
+    <fullyQualifiedTypeName name="org.hibernate.boot.model.source.spi.JoinedSubclassEntitySource"/>
+    <fullyQualifiedTypeName name="jakarta.transaction.Transactional"/>
+    <fullyQualifiedTypeName name="com.t2lJsh.t2lJsh.dto.Wrt_user"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+</qualifiedTypeNameHistroy>

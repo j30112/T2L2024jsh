@@ -1,0 +1,17 @@
+package com.t2lJsh.t2lJsh.dto;
+
+import java.sql.Date;
+
+import lombok.Data;
+
+@Data
+public class Wrt_user {
+	int 	doc_no;	//평가서 번호
+	String 	jbgd_nm;//직위
+	String 	wrt_nm;	//이름
+	Date 	wrt_tm;	//제출시간
+
+	
+	//버퍼
+	private int currentval;	//wrt_user에서 doc_no가져와서 세팅
+}

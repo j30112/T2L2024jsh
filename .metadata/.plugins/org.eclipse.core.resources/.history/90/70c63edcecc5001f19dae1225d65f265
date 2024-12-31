@@ -1,0 +1,213 @@
+@charset "UTF-8";
+
+form {
+	border: 1px black grid;
+	width: 68%;
+	margin: 0 auto;
+	margin-top: 150px;
+	
+}
+
+#ttl{
+	margin-right: 1%;
+	font-size: 4em;
+}
+.subTtl{
+	font-size: 1.5em;
+}
+
+.userInfo{
+	display:flex;
+	align-self:center;
+	margin-top: 90px;
+}
+
+.userInfoTxt{
+	font-size: 2em;
+	margin: 0% 1%;
+	margin-right: 5%;
+	
+}
+
+.userInfoInsert1,.userInfoInsert{
+	height: 2.2em;
+	width: 50%;
+	margin-top: 0.5em;
+	margin-bottom: 50px;
+	border: solid 1px #D9D9D9;
+}
+.userInfoInsert1{
+	width: 20%;
+	margin-right: 5%;
+	height: 2.5em;
+}
+
+.infoBox{
+	width: 100%;
+	height: 15%;
+	background-color: #444C65;
+	color: white;
+	padding: 2%;
+}
+.infoBox label {
+	font-size: 1.5em;
+}
+#infoBoxSub{
+	font-size: 1em;
+}
+.seongGwaInfo{
+	width: 70%;
+	display: inline-block;
+}
+#insertButt{
+	float: right;
+	border: white 2px solid;
+	background-color: #444C65;
+	font-size: 1.2em;
+	color: white;
+	padding: 1%;
+	margin-top: 0.1%;
+}
+.seongGwaCTGR{
+	display: flex;
+	border: solid 1px #D9D9D9;
+	width: 101.8%;
+	padding: 1%;
+}
+
+.ctgrTxt{
+	font-size: 1.5em;
+	margin: 0% 5%;
+}
+#ctgrSelect{
+	width: 40%;
+	height: 2.5em;
+	border: solid 1px #D9D9D9;
+}
+#seongGwaPer{
+	height: 2.2em;
+	width: 18%;
+	border: solid 1px #D9D9D9;
+}
+#ctgrTxtperIcon{
+	margin-left:1%;
+	font-size: 1.3em;
+	color: #D9D9D9;
+}
+.scoreA {
+        margin-top: -0.5%;
+        display: flex;
+        align-items: center;  /* 세로 정렬 */
+        justify-content: center;  /* 가로 정렬 */
+        border: solid 1px #D9D9D9;
+        width: 101.8%;
+        height: 4em;
+        padding: 1%;
+    }
+    #scoreAInput {
+        width: 30%;
+        text-align: center; /* 입력값도 가운데 정렬 */
+        height: 2.2em;
+        
+    }
+    .scoreA label {
+        font-size: 1.2em;
+        margin-right: 3em;  /* input과의 간격 조정 */
+    }
+textarea{
+	width: 93.8%;
+	height: 24.5em;
+	resize: none;
+	border: solid 1px #D9D9D9;
+	padding: 2% 5%;
+	font-size: 1.2em;
+}
+
+/* 텍스트아리아 클릭해도 바깥에 테두리 선 안 생기게 */
+textarea:focus{
+	outline: none;
+}
+.textareaOpinion{
+	width: 90%;
+	height: 7.8em;
+	border: none;
+}
+
+table{
+	width: 104%;
+	border-collapse: collapse;
+	border: 1px solid #D9D9D9;
+}
+td{
+	text-align: center;
+	margin: 1%;
+}
+.tdLeft{
+	text-align: left;
+	padding-left: 1%;
+}
+
+input[type='radio']:checked:after {
+        width: 11px;
+        height: 11px;
+        border-radius: 50px;
+        top: -1px;
+        left: -1px;
+        position: relative;
+        background-color: #0B173B;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+    
+#scoreB{
+	height: 4em;
+}
+#scoreAB{
+	height: 4em;
+}
+    
+#opinionTd1{
+	width: 10%;
+}
+#opinionTd1 input{
+	width: 50%;
+	border: solid 1px #D9D9D9;
+}
+#opinionTd2{
+	width: 40%;
+}
+#opinionTd3{
+	width: 5%;
+	text-align: center;
+}
+
+#wishBox, .scoreA{
+	margin-bottom: 6em;
+} 
+
+.submitButtCenter{
+	text-align: center;
+}
+#submitButt{
+	width: 25%;
+	height: 2.5em;
+	font-size: 2em;
+	background-color: #0B173B;
+	color: white;
+}
+
+#sumId{
+	border: none;
+	text-align: center;
+	font-size: 1.2em;
+}
+#sumId:checked {
+	border: none;
+	outline: none;
+}
+
+
+
+

@@ -1,0 +1,48 @@
+package com.t2lJsh.t2lJsh.service;
+
+import java.time.LocalDate;
+
+import org.springframework.stereotype.Service;
+
+import com.t2lJsh.t2lJsh.dao.T2lDao;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@RequiredArgsConstructor
+@Slf4j
+public class T2lServiceImpl implements T2lService {
+
+	private final T2lDao dao;
+
+//	@Override
+//	public String test2() {
+//		String test = dao.test();
+//		return test;
+//	}
+
+	@Override
+	public String quaterPeriod(String gubun) {
+		
+		System.out.println("T2lService quaterPeriod start...");
+		
+		String year = "";
+		String bangi = "";
+		LocalDate now = LocalDate.now();
+		
+		if(gubun.equals("min")) {
+			bangi = bangiGubun(now);
+		}
+		
+		return null;
+	}
+
+	private String bangiGubun(LocalDate now) {
+		System.out.printf("T2lService bangiGubun start... /n now = %s", now);
+		return null;
+	}
+	
+
+
+}

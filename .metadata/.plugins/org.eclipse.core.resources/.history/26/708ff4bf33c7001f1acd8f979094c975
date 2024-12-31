@@ -1,0 +1,18 @@
+package com.t2lJsh.t2lJsh.dto;
+
+import lombok.Data;
+
+@Data
+public class formInfor {
+
+	private int qItemNo1;//업무능력평가 자기평가1
+	private int qItemNo2;//업무능력평가 자기평가2
+	private int qItemNo3;//업무능력평가 자기평가3
+	private int qItemNo4;//업무능력평가 자기평가4
+	private int qItemNo5;//업무능력평가 자기평가5
+	private int qItemNo6;//업무능력평가 자기평가6
+	private int qItemNo7;//업무능력평가 자기평가7
+	private int qItemNo8;//업무능력평가 자기평가8
+	private int qItemNo9;//업무능력평가 자기평가9
+	private int qItemNo10;//업무능력평가 자기평가10
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.t2lJsh.t2lJsh.opinion">
+
+	
+	<insert id="insertOpinion" parameterType="Opinion">
+		INSERT INTO opinion (DOC_NO, 	EVLTR_NM1, EVL_CN1, 	EVL_RSLT_CN1,   EVL_CN_CEO,   EVL_RSLT_CN_CEO)
+					VALUES(#{doc_no}, #{evltr_nm1},#{evl_cn1},#{evl_rslt_cn1},#{evl_cn_ceo},#{evl_rslt_cn_ceo})
+	</insert>
+	
+	
+</mapper>

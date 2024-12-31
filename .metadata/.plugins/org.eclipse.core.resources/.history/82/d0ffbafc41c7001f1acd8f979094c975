@@ -1,0 +1,14 @@
+package com.t2lJsh.t2lJsh.dao;
+
+import com.t2lJsh.t2lJsh.dto.Assessmt;
+import com.t2lJsh.t2lJsh.dto.Wrt_user;
+
+public interface T2lDao {
+
+	String test();
+
+	int insertWrtUser(Wrt_user wrtUser);
+
+	int insertAssessmt(Assessmt assessmt);
+
+}

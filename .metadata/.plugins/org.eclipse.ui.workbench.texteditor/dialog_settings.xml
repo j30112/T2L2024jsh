@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="ilChaQItemNo7"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="ilChaQItemNo7"/>
+			<item value="twoChaQItemNo1"/>
+			<item value="twoQItemNo6"/>
+			<item value="twoQItemNo7"/>
+			<item value="ilChaQItemNo1"/>
+			<item value="ajmt_rt_1"/>
+			<item value="2차 평가"/>
+			<item value="1차평가"/>
+			<item value="scoreBNum"/>
+			<item value="sum_scr_b"/>
+			<item value="scoreB"/>
+			<item value="sumId"/>
+			<item value="prfmnc_cn_1"/>
+			<item value="inputDetail_"/>
+			<item value="seongGwaPer"/>
+		</list>
+		<list key="replacehistory">
+			<item value="twoChaQItemNo"/>
+			<item value="twoQItemNo"/>
+			<item value="ilChaQItemNo"/>
+			<item value="ilChaQItemNo1"/>
+			<item value="&lt;select id=&quot;ctgrSelect&quot;&gt;"/>
+			<item value="&lt;label class=&quot;ctgrTxt&quot;&gt;"/>
+			<item value="class=&quot;sumRadio&quot; name=&quot;qItemNo"/>
+			<item value="class=&quot;&quot; name=&quot;qItemNo"/>
+			<item value="&lt;td&gt;&lt;input type=&quot;radio&quot; class=&quot;tdTadio&quot;"/>
+			<item value="rowspan=&quot;2&quot; class=&quot;tdLeft&quot;"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="874"/>
+		<item key="DIALOG_Y_ORIGIN" value="312"/>
+		<item key="DIALOG_WIDTH" value="369"/>
+		<item key="DIALOG_HEIGHT" value="454"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+</section>

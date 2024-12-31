@@ -1,0 +1,57 @@
+package com.t2lJsh.t2lJsh.dao;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
+
+import com.t2lJsh.t2lJsh.dto.Assessmt;
+import com.t2lJsh.t2lJsh.dto.Work_perform;
+import com.t2lJsh.t2lJsh.dto.Wrt_user;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Repository
+@RequiredArgsConstructor
+public class T2lDaoImpl implements T2lDao {
+	
+	private final SqlSession session;
+	
+	@Override
+	public String test() {
+		String test  = session.selectOne("com.t2lJsh.t2lJsh.assess.test2");
+		return test;
+	}
+
+	@Override
+	public int insertWrtUser(Wrt_user wrtUser) {
+		System.out.println("T2lDaoImpl insertWrtUser start...");
+		System.out.println("T2lDaoImpl insertWrtUser wrtUser >> "+wrtUser);
+		
+		int result = 0;
+		
+		try {
+			result = session.insert("com.t2lJsh.t2lJsh.wrtUser.insertWrtUser", wrtUser);
+		} catch (Exception e) {
+			System.out.println("T2lDaoImpl insertWrtUser exception >> "+e);
+		}
+		return result;
+	}
+
+	@Override
+	public int insertWorkPerform(Work_perform workPerform) {
+		System.out.println("T2lDaoImpl insertWorkPerform start...");
+		System.out.println("T2lDaoImpl insertWorkPerform wrtUser >> "+workPerform);
+		
+		int result = 0;
+		
+		try {
+			result = session.insert("Work_perform", workPerform)
+		} catch (Exception e) {
+			System.out.println("T2lDaoImpl insertWorkPerform exception >> "+e);
+		}
+		
+		return result;
+	}
+
+}

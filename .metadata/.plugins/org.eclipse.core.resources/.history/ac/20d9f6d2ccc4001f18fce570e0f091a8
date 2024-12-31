@@ -1,0 +1,7 @@
+package com.t2lJsh.t2lJsh.service;
+
+public interface T2lService {
+
+	String test2();
+
+}

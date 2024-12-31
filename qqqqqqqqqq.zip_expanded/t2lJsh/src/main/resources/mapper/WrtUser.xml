@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.t2lJsh.t2lJsh.wrtUser">
+
+	
+	<insert id="insertWrtUser" parameterType="Wrt_user">
+		INSERT INTO wrt_user (DOC_NO, 		JBGD_NM, 	WRT_NM, WRT_TM)
+		VALUES (NEXT VALUE FOR doc_no_seq, #{jbgd_nm}, 	#{wrt_nm}, 	SYSDATE());
+	</insert>
+	
+	<select id="selectDocNo" resultType="int">
+		SELECT MAX(DOC_NO)
+		FROM wrt_user
+	</select>
+	
+	
+</mapper>
