@@ -1,0 +1,46 @@
+package com.t2lJsh.t2lJsh.dto;
+
+import java.util.List;
+
+import lombok.Data;
+
+@Data
+public class Work_perform {
+	private String 	se_no;		//글 작성란 구분번호
+	private int		doc_no;		//평가서 번호
+	private String 	ctgry_no_1;	//카테고리명
+	private int 	ajmt_rt_1;	//달성률
+	private String 	prfmnc_cn_1;	//내용
+	private int 	sum_scr_a;	//업무 성과점수
+	
+	//버퍼
+	
+	private List<String> 	ctgry_no;	//카테고리명
+	private List<String> 	ajmt_rt;	//달성률
+	private List<String> 	prfmnc_cn;	//내용
+	
+	
+	/*private String 	ctgry_no_2;	//카테고리명
+	private int 	ajmt_rt_2;	//달성률
+	private String 	prfmnc_cn_2;	//내용
+	
+	private String 	ctgry_no_3;	//카테고리명
+	private int 	ajmt_rt_3;	//달성률
+	private String 	prfmnc_cn_3;	//내용
+	
+	private String 	ctgry_no_4;	//카테고리명
+	private int 	ajmt_rt_4;	//달성률
+	private String 	prfmnc_cn_4;	//내용
+	
+	private String 	ctgry_no_5;	//카테고리명
+	private int 	ajmt_rt_5;	//달성률
+	private String 	prfmnc_cn_5;	//내용
+	
+	private String 	ctgry_no_6;	//카테고리명
+	private int 	ajmt_rt_6;	//달성률
+	private String 	prfmnc_cn_6;	//내용
+	
+	private String 	ctgry_no_7;	//카테고리명
+	private int 	ajmt_rt_7;	//달성률
+	private String 	prfmnc_cn_7;	//내용*/
+}

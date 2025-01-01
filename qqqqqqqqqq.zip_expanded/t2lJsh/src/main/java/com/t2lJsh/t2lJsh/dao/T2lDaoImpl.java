@@ -62,7 +62,7 @@ public class T2lDaoImpl implements T2lDao {
 	@Override
 	public int insertWorkPerform(Work_perform workPerform) {
 		System.out.println("T2lDaoImpl insertWorkPerform start...");
-		System.out.println("T2lDaoImpl insertWorkPerform wrtUser >> "+workPerform);
+		System.out.println("T2lDaoImpl insertWorkPerform workPerform >> "+workPerform);
 		
 		int result = 0;
 		

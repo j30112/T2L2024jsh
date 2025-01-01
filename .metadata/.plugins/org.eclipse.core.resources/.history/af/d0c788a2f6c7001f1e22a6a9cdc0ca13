@@ -1,0 +1,14 @@
+package com.t2lJsh.t2lJsh.dto;
+
+import java.util.List;
+
+
+public class Work_perform {
+	private String 	se_no;		//글 작성란 구분번호
+	private int		doc_no;		//평가서 번호
+	private int 	sum_scr_a;	//업무 성과점수
+	
+	private List<String> 	ctgry_no;	//카테고리명
+	private List<String> 	ajmt_rt;	//달성률
+	private List<String> 	prfmnc_cn;	//내용
+}

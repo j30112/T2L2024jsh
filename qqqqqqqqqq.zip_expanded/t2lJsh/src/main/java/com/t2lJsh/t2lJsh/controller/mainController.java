@@ -1,8 +1,11 @@
 package com.t2lJsh.t2lJsh.controller;
 //매퍼 주소 이거 제발 제발 외우라고
 
+import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -79,17 +82,28 @@ public class mainController {
 								,@ModelAttribute Opinion opinion
 								,@ModelAttribute Wish_req wishReq
 								,@ModelAttribute Work_perform workPerform
+								/*,@RequestParam("se_no[]") String[] senoArray		/*자꾸 list에러나서 결국 배열로 사용함 하......
+								,@RequestParam("ctgry_no[]") String[] ctgryNoArray
+							    ,@RequestParam("ajmt_rt[]") String[] ajmtRtArray
+							    ,@RequestParam("prfmnc_cn[]") String[] prfmncCnArray*/
 							) {
 		
 		System.out.println("mainController formSubmit start...");
 		log.info("mainController formSubmit start...", LocalDateTime.now());
 		
-		System.out.println(wrtUser);
-		System.out.println(assessmt);
+		System.out.println("배열학인 >> " + workPerform);
+		/*System.out.println("배열학인 >> " + Arrays.toString(ctgryNoArray));
+		System.out.println("배열학인 >> " + Arrays.toString(ajmtRtArray));
+		System.out.println("배열학인 >> " + Arrays.toString(prfmncCnArray));*/
+		
+		
+		
 		
 		int result =0;
 		
-		result = service.insertValue(wrtUser, assessmt, opinion, wishReq, workPerform);
+		result = service.insertValue(
+									wrtUser, assessmt, opinion, wishReq, workPerform
+									);
 		
 		
 		

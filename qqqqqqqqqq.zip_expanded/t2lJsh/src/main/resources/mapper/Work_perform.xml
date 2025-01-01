@@ -5,8 +5,8 @@
 
 	
 	<insert id="insertworkperform" parameterType="Work_perform">
-		INSERT INTO wrt_user (DOC_NO, 		JBGD_NM, 	WRT_NM, WRT_TM)
-		VALUES (NEXT VALUE FOR doc_no_seq, #{jbgd_nm}, 	#{wrt_nm}, 	SYSDATE());
+		INSERT INTO work_perform (SE_NO,DOC_NO, CTGRY_NM,AJMT_RT, PRFMNC_CN,SUM_SCR_A) 
+			VALUES(#{se_no_insert},#{doc_no},#{ctgry_no_insert},#{ajmt_rt_no_insert},#{prfmnc_cn_insert},#{sum_scr_a})
 	</insert>
 	
 	

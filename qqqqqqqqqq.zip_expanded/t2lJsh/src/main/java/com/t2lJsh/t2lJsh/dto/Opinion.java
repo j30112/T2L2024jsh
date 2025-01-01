@@ -1,5 +1,7 @@
 package com.t2lJsh.t2lJsh.dto;
 
+import java.util.List;
+
 import lombok.Data;
 
 @Data

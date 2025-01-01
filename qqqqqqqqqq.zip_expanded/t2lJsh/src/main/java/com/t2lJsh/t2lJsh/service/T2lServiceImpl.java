@@ -1,6 +1,8 @@
 package com.t2lJsh.t2lJsh.service;
 
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
@@ -8,6 +10,7 @@ import com.t2lJsh.t2lJsh.dao.T2lDao;
 import com.t2lJsh.t2lJsh.dto.Assessmt;
 import com.t2lJsh.t2lJsh.dto.Opinion;
 import com.t2lJsh.t2lJsh.dto.Wish_req;
+
 import com.t2lJsh.t2lJsh.dto.Work_perform;
 import com.t2lJsh.t2lJsh.dto.Wrt_user;
 
@@ -87,11 +90,12 @@ public class T2lServiceImpl implements T2lService {
 	
 	@Transactional
 	@Override
-	public int insertValue(Wrt_user wrtUser, Assessmt assessmt, Opinion opinion, Wish_req wishReq,
-			Work_perform workPerform) {
+	public int insertValue(Wrt_user wrtUser, Assessmt assessmt, Opinion opinion, Wish_req wishReq,Work_perform workPerform
+			) {
 		
 		int result = 0;
 		int docno = 0;
+		
 		
 		System.out.println("T2lService insertValue start...");
 		
@@ -113,9 +117,42 @@ public class T2lServiceImpl implements T2lService {
 		//*******카테고리 추가 로직 완성 못함 
 		//workPerform 테이블 insert
 		System.out.printf("T2lService insertValue insertWorkPerform start...");
+		
+		
+		
+		//버퍼에 저장할 변수값 선언
+		String seNoInsert;
+		String ctgryNoInsert;
+		int ajmtRtNoInsert;
+		String prfmncCnInsert;
+		
+		for(int i=0; i<workPerform.getSe_no().length; i++) {
+			seNoInsert = workPerform.getSe_no()[i];
+			ctgryNoInsert = workPerform.getCtgry_no()[i];
+			ajmtRtNoInsert = workPerform.getAjmt_rt()[i];
+			prfmncCnInsert = workPerform.getPrfmnc_cn()[i];
+			
+			System.out.println("seNoInsert"+i+" >> "+seNoInsert);
+			System.out.println("ctgryNoInsert"+i+" >> "+ctgryNoInsert);
+			System.out.println("ajmtRtNoInsert"+i+" >> "+ajmtRtNoInsert);
+			System.out.println("prfmncCnInsert"+i+" >> "+prfmncCnInsert);
+			
+			workPerform.setSe_no_insert(seNoInsert);
+			workPerform.setCtgry_no_insert(ctgryNoInsert);
+			workPerform.setAjmt_rt_no_insert(ajmtRtNoInsert);
+			workPerform.setPrfmnc_cn_insert(prfmncCnInsert);
+			
+			result = dao.insertWorkPerform(workPerform);
+			System.out.printf("T2lService insertValue insertWorkPerform result >> "+result);
+			result = 0;
+		}
+		
 		result = dao.insertWorkPerform(workPerform);
 		System.out.printf("T2lService insertValue insertWorkPerform result >> "+result);
 		result = 0;
+		
+		
+		
 		
 		//wish_req 테이블 insert
 		System.out.printf("T2lService insertValue insertWishReq start...");
@@ -140,6 +177,7 @@ public class T2lServiceImpl implements T2lService {
 		
 		return result;
 	}
+
 	
 
 
