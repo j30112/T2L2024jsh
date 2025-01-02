@@ -52,4 +52,47 @@
 		)
 	</insert>
 	
+	
+	
+	<select id="assessmtList" resultType="Assessmt" parameterType="map">
+		SELECT SE_NO
+				,EVLTR_NM
+				,QITEM_NO1
+				,QITEM_NO2
+				,QITEM_NO3
+				,QITEM_NO4
+				,QITEM_NO5
+				,QITEM_NO6
+				,QITEM_NO7
+				,QITEM_NO8
+				,QITEM_NO9
+				,QITEM_NO10
+				,SUM_SCR_B
+		FROM assessmt
+		
+		<choose>
+				<when test="gubun == 1">
+					WHERE DOC_NO = #{docNo}
+						AND SE_NO = '업무능력평가'
+						AND EVLTR_NM = '자기평가'
+				</when>
+				<when test="gubun == 2">
+					WHERE DOC_NO = #{docNo}
+						AND SE_NO = '업무능력평가'
+						AND EVLTR_NM = '1차평가자'
+				</when>
+				<when test="gubun == 3">
+					WHERE DOC_NO = #{docNo}
+						AND SE_NO = '기술적성취평가'
+						AND EVLTR_NM = '자기평가'
+				</when>
+				<otherwise>
+					WHERE DOC_NO = #{docNo}
+						AND SE_NO = '기술적성취평가'
+						AND EVLTR_NM = '평가자들'
+				</otherwise>
+			</choose>
+		
+	</select>
+	
 </mapper>

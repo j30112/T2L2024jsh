@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.t2lJsh.t2lJsh.resultInfo">
+
+	
+	<select id="resultInfo" parameterType="int" resultType="com.t2lJsh.t2lJsh.dto.Result_info">
+	SELECT 
+		wu.DOC_NO
+		,wu.JBGD_NM
+		,wu.WRT_NM
+		,wu.WRT_TM
+		,wr.DMND_MTTR
+		,o.EVLTR_NM1
+		,o.EVL_CN1
+		,o.EVL_RSLT_CN1
+		,o.EVL_CN_CEO
+		,o.EVL_RSLT_CN_CEO
+	FROM wrt_user wu
+		LEFT JOIN wish_req wr ON wu.DOC_NO = wr.DOC_NO
+		LEFT JOIN opinion o ON wr.DOC_NO = o.DOC_NO
+	WHERE wu.DOC_NO = #{docNo}
+		
+	</select>
+	
+	<select id="workPergormLIst" resultType="Work_perform" parameterType="int">
+		SELECT SE_NO AS se_no_select
+				,DOC_NO 
+				,CTGRY_NM AS ctgry_no_select
+				,AJMT_RT AS ajmt_rt_no_select
+				,PRFMNC_CN AS prfmnc_cn_select
+				,SUM_SCR_A
+		FROM work_perform
+		WHERE DOC_NO = #{docNo}
+		ORDER BY SE_NO	
+	</select>
+	
+	
+	
+</mapper>
