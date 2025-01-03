@@ -189,7 +189,7 @@
 			<label id="ttl">평가서</label>
 			<p>
 			<label class="subTtl">평가 기간</label>
-			<label class="subTtl">${quaterInfoNow } - ${quaterInfoNext }</label>
+			<label class="subTtl"  id="subTtlDate">${quaterInfoNow } - ${quaterInfoNext }</label>
 			
 			<div class="userInfo">
 				<label class="userInfoTxt">직위</label>
@@ -286,7 +286,7 @@
 				            <td rowspan="2" class="tdLeft" id="td3">1. 근태</td>
 				            <td rowspan="2" class="tdLeft" id="td4">지각 및 근무태도</td>
 				            <td>자기평가</td>
-					            <td><input type="radio" class="sumRadio" name="qItemNo1" value="3"></td>
+					            <td><input type="radio" class="sumRadio" name="qItemNo1" value="3" ></td>
 					            <td><input type="radio" class="sumRadio" name="qItemNo1" value="2"></td>
 					            <td><input type="radio" class="sumRadio" name="qItemNo1" value="1"></td>
 				        </tr>
@@ -449,7 +449,7 @@
 				        <tr>
 				        	<td colspan="4" id="scoreAB">자기 평가 합계(A + B)</td>
 				        	<td colspan="4"><input id="sumIdAB" value="점수 합산 결과" readonly="readonly"></td>
-				        	<td><input type="hidden" id="scoreABNum" value="0"></td>
+				        	<td><input type="hidden" id="scoreABNum" value="0" name="sum_scr_ab"></td>
 				        </tr>
 				        
 				        
