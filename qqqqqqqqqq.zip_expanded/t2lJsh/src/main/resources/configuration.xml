@@ -16,6 +16,7 @@
 		<typeAlias alias="Wish_req" type="com.t2lJsh.t2lJsh.dto.Wish_req" />
 		<typeAlias alias="Work_perform" type="com.t2lJsh.t2lJsh.dto.Work_perform" />
 		<typeAlias alias="Wrt_user" type="com.t2lJsh.t2lJsh.dto.Wrt_user" />
+		<typeAlias alias="Result_info" type="com.t2lJsh.t2lJsh.dto.Result_info" />
 		
 		
 	</typeAliases>

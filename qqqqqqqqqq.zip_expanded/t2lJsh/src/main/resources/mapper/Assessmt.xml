@@ -11,11 +11,11 @@
 	<insert id="qItemNo101_11" parameterType="Assessmt">
 		INSERT INTO assessmt (
 								SE_NO, EVLTR_NM, DOC_NO, QITEM_NO1, QITEM_NO2, QITEM_NO3, QITEM_NO4, QITEM_NO5,
-			 					QITEM_NO6, QITEM_NO7 ,QITEM_NO8, QITEM_NO9, QITEM_NO10, SUM_SCR_B
+			 					QITEM_NO6, QITEM_NO7 ,QITEM_NO8, QITEM_NO9, QITEM_NO10, SUM_SCR_B, SUM_SCR_AB
 			 					) 
 		VALUES (
 								"업무능력평가", "자기평가", #{doc_no}, #{qItemNo1},#{qItemNo2},#{qItemNo3},#{qItemNo4},#{qItemNo5},
-								#{qItemNo6},#{qItemNo7},#{qItemNo8},#{qItemNo9},#{qItemNo10}, #{sum_scr_b}
+								#{qItemNo6},#{qItemNo7},#{qItemNo8},#{qItemNo9},#{qItemNo10}, #{sum_scr_b}, #{sum_scr_ab}
 		)
 	</insert>
 	
@@ -68,6 +68,11 @@
 				,QITEM_NO9
 				,QITEM_NO10
 				,SUM_SCR_B
+				<choose>
+					<when test="gubun == 1">
+						,SUM_SCR_AB
+					</when>
+				</choose>
 		FROM assessmt
 		
 		<choose>

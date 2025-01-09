@@ -1,10 +1,15 @@
 package com.t2lJsh.t2lJsh.dao;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.t2lJsh.t2lJsh.dto.Assessmt;
 import com.t2lJsh.t2lJsh.dto.Opinion;
+import com.t2lJsh.t2lJsh.dto.Result_info;
 import com.t2lJsh.t2lJsh.dto.Wish_req;
 import com.t2lJsh.t2lJsh.dto.Work_perform;
 import com.t2lJsh.t2lJsh.dto.Wrt_user;
@@ -33,11 +38,11 @@ public class T2lDaoImpl implements T2lDao {
 		
 		int result = 0;
 		
-		try {
+		//try {
 			result = session.insert("com.t2lJsh.t2lJsh.wrtUser.insertWrtUser", wrtUser);
-		} catch (Exception e) {
-			System.out.println("T2lDaoImpl insertWrtUser exception >> "+e);
-		}
+//		} catch (Exception e) {
+//			System.out.println("T2lDaoImpl insertWrtUser exception >> "+e.getMessage());
+//		}
 		return result;
 	}
 	
@@ -51,7 +56,7 @@ public class T2lDaoImpl implements T2lDao {
 		try {
 			docNo = session.selectOne("com.t2lJsh.t2lJsh.wrtUser.selectDocNo");
 		} catch (Exception e) {
-			System.out.println("T2lDaoImpl selectDocNo exception >> "+e);
+			System.out.println("T2lDaoImpl selectDocNo exception >> "+e.getMessage());
 		}
 		
 		System.out.println("T2lDaoImpl selectDocNo docNo >> "+docNo);
@@ -69,7 +74,7 @@ public class T2lDaoImpl implements T2lDao {
 		try {
 			result = session.insert("com.t2lJsh.t2lJsh.workperform.insertworkperform", workPerform);
 		} catch (Exception e) {
-			System.out.println("T2lDaoImpl insertWorkPerform exception >> "+e);
+			System.out.println("T2lDaoImpl insertWorkPerform exception >> "+e.getMessage());
 		}
 		
 		return result;
@@ -85,7 +90,7 @@ public class T2lDaoImpl implements T2lDao {
 		try {
 			result = session.insert("com.t2lJsh.t2lJsh.wishReq.insertWishReq", wishReq);
 		} catch (Exception e) {
-			System.out.println("T2lDaoImpl insertWishReq exception >> "+e);
+			System.out.println("T2lDaoImpl insertWishReq exception >> "+e.getMessage());
 		}
 		
 		return result;
@@ -114,7 +119,7 @@ public class T2lDaoImpl implements T2lDao {
 			
 			
 		} catch (Exception e) {
-			System.out.println("T2lDaoImpl insertAssessmt exception >> "+e);
+			System.out.println("T2lDaoImpl insertAssessmt exception >> "+e.getMessage());
 		}
 		
 		return result;
@@ -130,9 +135,70 @@ public class T2lDaoImpl implements T2lDao {
 		try {
 			result = session.insert("com.t2lJsh.t2lJsh.opinion.insertOpinion",opinion);
 		} catch (Exception e) {
-			System.out.println("T2lDaoImpl insertOpinion exception >> "+e);
+			System.out.println("T2lDaoImpl insertOpinion exception >> "+e.getMessage());
 		}
 		
 		return result;
 	}
+
+	@Override
+	public List<Result_info> selectResult(int docNo, Result_info resultInfo) {
+		System.out.println("T2lDaoImpl selectResult start... ");
+		System.out.println("T2lDaoImpl selectResult docNo >> "+docNo);
+		
+		List<Result_info> resultList = null;
+		
+		//Result_info result_info = null;
+		try {
+			resultList = session.selectList("com.t2lJsh.t2lJsh.resultInfo.resultInfo", docNo);
+			System.out.println("T2lDaoImpl selectResult resultList >> "+resultList);
+		} catch (Exception e) {
+			System.out.println("T2lDaoImpl selectResult exception >> "+e.getMessage());
+		}
+		return resultList;
+		
+	}
+
+	@Override
+	public List<Work_perform> workPergormLIst(int docNo) {
+		System.out.println("T2lDaoImpl workPergormLIst start... ");
+		List<Work_perform> result = null;
+		
+		try {
+			result = session.selectList("com.t2lJsh.t2lJsh.resultInfo.workPergormLIst", docNo);
+			System.out.println("T2lDaoImpl selectResult workPergormLIst result >> "+result);
+			for (Work_perform workPerform : result) {
+			    System.out.println(workPerform);  // 각 객체의 필드 출력
+			}
+		} catch (Exception e) {
+			System.out.println("T2lDaoImpl workPergormLIst exception >> "+e.getMessage());
+		}
+		
+		return result;
+	}
+
+	@Override
+	public List<Assessmt> assessmtList(int docNo, int gubun) {
+		System.out.println("T2lDaoImpl assessmtList start... docNo >> "+docNo+" gubun >> "+gubun);
+		
+		Map<String, Integer> info = new HashMap<>();
+		info.put("docNo", docNo);
+	    info.put("gubun", gubun);
+	    
+	    List<Assessmt> assessmt = null;
+	    
+	    
+	    try {
+	    	assessmt = session.selectList("com.t2lJsh.t2lJsh.assessmt.assessmtList", info);
+			System.out.println("T2lDaoImpl assessmtList docNo >> "+docNo+" gubun >> "+gubun);
+			System.out.println("assessmt >> "+assessmt);
+			
+		} catch (Exception e) {
+			System.out.println("T2lDaoImpl assessmtList exception >> "+e.getMessage());
+		}
+		return assessmt;
+		
+		
+	}
+
 }

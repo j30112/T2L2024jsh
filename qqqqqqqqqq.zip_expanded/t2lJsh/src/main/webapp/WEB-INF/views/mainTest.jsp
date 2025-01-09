@@ -143,7 +143,9 @@
         wrapper.on('click', '.deleteButt', deleteInsert);
     });
     
-  	/* function submitChk(){
+  	 function submitChk(){
+  		alert('start');
+  		
   		if(frm.jbgd_nm.value == 0){
   			alert('직위를 선택해주세요.');
   			frm.jbgd_nm.focus();
@@ -154,24 +156,95 @@
   			frm.wrt_nm.focus();
   			return false;
   		}
-  		//카테고리 개수만큼 fot문을 돌려서 하나
-  		if(frm.wrt_nm.value){
-  			alert('이름을 입력해주세요.');
-  			frm.wrt_nm.focus();
+  		//카테고리 개수만큼 fot문을 돌려서 하나..
+  		//name값이 배열을 가지는 경우 document.getElementsByName으로 값을 가져와야 하는 것 같음..
+  		const ctgry = document.getElementsByName('ctgry_no[]');
+  		//<select> 요소의 value는 항상 문자열 형태로 반환된다고 함.............. 그래서 타입까지 비교해줘야 함
+  		for (let i = 0; i < ctgry.length; i++) {
+  		    //alert(ctgry_no[i].value); // 각 요소의 값 출력
+  		    if(ctgry[i].value==="0"){
+  		    	alert(i+1+'번 글의 카테고리를 선택해주세요.');
+  		    	//하단 같은 경우 이미 document.getElementsByName('ctgry_no[]')로 정의해줘서 frm안 붙여줘도 되는 듯..
+  		    	ctgry[i].focus();
+  		    	return false;
+  		    }
+  		}
+  		
+  		/* 달성률은 그냥 내가 있으면 좋을 것 같아서 넣은거라 굳이 null체크 안 함...
+  		const ajmt_rt = document.getElementsByName('ajmt_rt[]');
+  		//alert(ajmt_rt.length);
+  		for (let i = 0; i < ajmt_rt.length; i++){
+  			if(ajmt_rt[i].value===""){
+  				alert(i+1+'번 글의 달성률을 입력해주세요.');
+  				ajmt_rt[i].focus();
+  				return false;
+  			}
+  		}*/
+  		
+  		const prfmnc_cn = document.getElementsByName('prfmnc_cn[]');
+  		//alert(prfmnc_cn.length);
+  		for (let i = 0; i < prfmnc_cn.length; i++){
+  			if(prfmnc_cn[i].value===""){
+  				alert(i+1+'번 글의 내용을 입력해주세요.');
+  				prfmnc_cn[i].focus();
+  				return false;
+  			}
+  		}
+  		
+  		if(!frm.sum_scr_a.value){
+  			alert('업무성과 환산점수를 입력해주세요.');
+  			frm.sum_scr_a.focus();
   			return false;
   		}
   		
-  		if(frm.sum_scr_a.value){
-  			alert('업무성과 환산점수를 입력해주세요.');
-  			frm.sum_scr_a.focus();
+  		if(!frm.evltr_nm1.value){
+  			alert('1차 평가자명을 입력해주세요.');
+  			frm.evltr_nm1.focus();
   			return false;
   		}
-  		if(frm.sum_scr_a.value){
-  			alert('업무성과 환산점수를 입력해주세요.');
-  			frm.sum_scr_a.focus();
+  		if(!frm.evl_cn1.value){
+  			alert('1차 평가자의 평가 의견을 입력해주세요.');
+  			frm.evl_cn1.focus();
   			return false;
   		}
-  	} */
+  		if(frm.evl_rslt_cn1.value==0){
+  			alert('1차 평가 등급을 선택해주세요.');
+  			frm.evl_rslt_cn1.focus();
+  			return false;
+  		}
+  		if(!frm.evl_cn_ceo.value){
+  			alert('대표이사의 평가 등급을 입력해주세요.');
+  			frm.evl_cn_ceo.focus();
+  			return false;
+  		}
+  		if(frm.evl_rslt_cn_ceo.value==0){
+  			alert('대표이사의 평가 등급을 선택해주세요.');
+  			frm.evl_rslt_cn_ceo.focus();
+  			return false;
+  		}
+  		
+  		// 하나도 선택되지 않았다면 false 반환하게 해야하는데 안돼서.... 걍 숫자로 구분하게...
+  		// 걍 문항들마다 name 다르게 하지말고 얘네도 배열로 저장할걸... 왜 굳이 이름으로 평가자를 나누려고 했지...
+  		// 페이지 내 모든 타입이 라디오 버튼인 항목 선택
+  		//114
+  	    const qItemOrigin = document.querySelectorAll('input[type="radio"]');
+  		//'input[type="radio"]'가 name상관없이 라디오버튼 요소를 다 카운트 하는 것 같음.. 그래서 나누기 3.....
+  		//38
+		const qItem = qItemOrigin.length/3;
+  		
+  		var chkQitem = document.querySelectorAll('input[type="radio"]:checked');
+  		alert('chkQitem >> '+chkQitem.length);
+  		
+  	    // 모든 라디오 버튼을 돌면서 하나라도 선택되었는지 확인
+  	    
+  	    console.log('chkQitem >> '+chkQitem+' qItem>> '+qItem);
+  	    alert('chkQitem != qItem >> '+chkQitem.length != qItem);
+  	    if (chkQitem.length != qItem) {
+  	        alert('모든 평가 항목을 체크해주세요.');
+  	        return false; // 폼 제출을 중단
+  	    }
+  	    return true; // 라디오 버튼이 하나라도 선택되었으면 제출
+  	}
     
 </script>
 
@@ -179,12 +252,9 @@
 
 
 
-<a href="mmmm"></a>
-
-
 <body>
 	
-	<form action="/formSubmit" name="frm">
+	<form action="/formSubmit" name="frm" onsubmit="return submitChk()">
 		<div class="info">
 			<label id="ttl">평가서</label>
 			<p>
@@ -224,7 +294,7 @@
 			<div class="seongGwaInput">
 				<div class="seongGwaCTGR">
 					<label class="ctgrTxt">카테고리</label>
-					<select class="ctgrSelect" name="ctgry_no[]">
+					<select class="ctgrSelect" name="ctgry_no[]" id="ctgrTest">
 						<option value="0" selected="selected">성과 종류를 선택해주세요</option>
 						<option value="프로젝트 참여">프로젝트 참여</option>
 						<option value="솔루션 개발">솔루션 개발</option>
@@ -286,7 +356,7 @@
 				            <td rowspan="2" class="tdLeft" id="td3">1. 근태</td>
 				            <td rowspan="2" class="tdLeft" id="td4">지각 및 근무태도</td>
 				            <td>자기평가</td>
-					            <td><input type="radio" class="sumRadio" name="qItemNo1" value="3" ></td>
+					            <td><input type="radio" class="sumRadio" name="qItemNo1" value="3"></td>
 					            <td><input type="radio" class="sumRadio" name="qItemNo1" value="2"></td>
 					            <td><input type="radio" class="sumRadio" name="qItemNo1" value="1"></td>
 				        </tr>
@@ -671,9 +741,10 @@
 		
 		
 		<div class="submitButtCenter">
-			<!-- <button type="button" id="submitButt" onclick="submitChk()">평가서 제출</button> -->
 			<button type="submit" id="submitButt">평가서 제출</button>
+			<!-- <button type="submit" id="submitButt">평가서 제출</button> -->
 		</div>
+		
 	</form>
 </body>
 </html>

@@ -10,10 +10,12 @@ form {
 
 #ttl{
 	margin-right: 1%;
-	font-size: 4em;
+	/*font-size: 4em;*/
+	font-size: 4vw;
 }
 .subTtl{
-	font-size: 1.5em;
+	/*font-size: 1.5em;*/
+	font-size: 1.5vw;
 }
 
 .userInfo{
@@ -23,23 +25,25 @@ form {
 }
 
 .userInfoTxt{
-	font-size: 2em;
+	/*font-size: 2em;*/
+	font-size: 2vw;
 	margin: 0% 1%;
 	margin-right: 5%;
 	
 }
 
 .userInfoInsert1,.userInfoInsert{
-	height: 2.2em;
-	width: 50%;
+	height: 2.2vw;
+	width: 48%;
 	margin-top: 0.5em;
 	margin-bottom: 50px;
 	border: solid 1px #D9D9D9;
+	font-size: 0.8vw;
 }
 .userInfoInsert1{
 	width: 20%;
 	margin-right: 5%;
-	height: 2.5em;
+	height: 2.3vw;
 }
 
 .infoBox{
@@ -50,10 +54,12 @@ form {
 	padding: 2%;
 }
 .infoBox label {
-	font-size: 1.5em;
+	/*font-size: 1.5em;*/
+	font-size: 1.5vw;
 }
 #infoBoxSub{
-	font-size: 1em;
+	/*font-size: 1em;*/
+	font-size: 1vw;
 }
 .seongGwaInfo{
 	width: 70%;
@@ -63,7 +69,8 @@ form {
 	float: right;
 	border: white 2px solid;
 	background-color: #444C65;
-	font-size: 1.2em;
+	/*font-size: 1.2em;*/
+	font-size: 1.2vw;
 	color: white;
 	padding: 1%;
 	margin-top: 0.1%;
@@ -76,22 +83,25 @@ form {
 }
 
 .ctgrTxt{
-	font-size: 1.5em;
+	/*font-size: 1.5em;*/
+	font-size: 1.5vw;
 	margin: 0% 4%;
 }
 .ctgrSelect{
 	width: 40%;
-	height: 2.5em;
 	border: solid 1px #D9D9D9;
+	font-size: 0.8vw;
 }
 .seongGwaPer{
-	height: 2.2em;
+	font-size:0.8vw;
+	height: 2.2vw;
 	width: 18%;
 	border: solid 1px #D9D9D9;
 }
 .ctgrTxtperIcon{
 	margin-left:1%;
-	font-size: 1.3em;
+	/*font-size: 1.3em;*/
+	font-size: 1.3vw;
 	color: #D9D9D9;
 }
 .scoreA {
@@ -106,12 +116,13 @@ form {
     }
 #scoreAInput {
     width: 30%;
-    height: 2.2em;
+    height: 2.2vw;
     border: solid 1px #D9D9D9;
     
 }
 .scoreA label {
-    font-size: 1.2em;
+    /*font-size: 1.2em;*/
+    font-size: 1.2vw;
     margin-right: 3em;  /* input과의 간격 조정 */
 }
 textarea{
@@ -120,7 +131,8 @@ textarea{
 	resize: none;
 	border: solid 1px #D9D9D9;
 	padding: 2% 5%;
-	font-size: 1.2em;
+	/*font-size: 1.2em;*/
+	font-size: 1.2vw;
 }
 
 /* 텍스트아리아 클릭해도 바깥에 테두리 선 안 생기게 */
@@ -137,6 +149,7 @@ table{
 	width: 104%;
 	border-collapse: collapse;
 	border: 1px solid #D9D9D9;
+	font-size: 1vw;
 }
 td{
 	text-align: center;
@@ -174,6 +187,9 @@ input[type='radio']:checked:after {
 #opinionTd1 input{
 	width: 50%;
 	border: solid 1px #D9D9D9;
+	/*font-size: 2.2vw;*/
+	height: 1vw;
+	font-size: 0.7em;
 }
 #opinionTd2{
 	width: 40%;
@@ -195,7 +211,8 @@ input[type='radio']:checked:after {
 #submitButt{
 	width: 25%;
 	height: 2.5em;
-	font-size: 2em;
+	/*font-size: 2em;*/
+	font-size: 2vw;
 	background-color: #0B173B;
 	color: white;
 }
@@ -203,7 +220,8 @@ input[type='radio']:checked:after {
 #sumId, #sumIdAB{
 	border: none;
 	text-align: center;
-	font-size: 1.2em;
+	/*font-size: 1.2em;*/
+	font-size: 1.2vw;
 }
 #sumId:checked {
 	border: none;
@@ -225,8 +243,8 @@ input[type=number] {
 
 /* 버튼 스타일 */
 .deleteButt {
-    width: 2.5em;
-    height: 2.5em;
+    width: 2.5vw;
+    height: 2.5vw;
     padding: 0; /* 기본 패딩 제거 */
     margin: 0; /* 기본 마진 제거 */
     border: none; /* 테두리 제거 */
@@ -235,7 +253,7 @@ input[type=number] {
     align-items: center; /* 수직 중앙 정렬 */
     justify-content: center; /* 수평 중앙 정렬 */
     cursor: pointer; /* 클릭 가능하도록 포인터 커서 추가 */
-    margin-left: 3%;
+    margin-left: 2%;
 }
 
 /* 이미지 스타일 */
@@ -246,3 +264,68 @@ input[type=number] {
     pointer-events: none; /* 이미지 클릭 불가능 (버튼에만 클릭 이벤트 적용) */
 }
 
+
+.resultLabel {
+	/*font-size: 1.2em;*/
+	font-size: 1.2vw;
+	color: black;
+	margin-top: 0.15em;
+	
+}
+
+.resultLabelNm {
+	/*font-size: 1.5em;*/
+	font-size: 1.5vw;
+	color: black;
+	margin-top: 0.2em;
+	margin-bottom: 50px;
+	
+	height: 2.2em;
+	width: 30%;
+}
+
+.txtAreaResult {
+	text-align: left;
+	width: 93.8%;
+	height: 24.5em;
+	resize: none;
+	border: solid 1px #D9D9D9;
+	padding: 2% 5%;
+	/*font-size: 1.2em;*/
+	font-size: 1.2vw;
+}
+
+
+.textareaOpinionResult{
+	display: flex;                /* Flexbox를 사용 */
+    align-items: center;          /* 세로 중앙 정렬 */
+	margin-left:1%;
+	text-align: left;
+	width: 90%;
+	height: 7.8em;
+	border: none;
+}
+
+.resultseongGwaPer{
+	width: 18%;
+	/*font-size: 1.2em;*/
+	font-size: 1.2vw;
+	color: black;
+	margin-top: 0.15em;
+}
+
+.resultctgr{
+	width: 40%;
+	/*font-size: 1.2em;*/
+	font-size: 1.2vw;
+	color: black;
+	margin-top: 0.15em;
+}
+
+#subTtlDate {
+	margin-left: 3%;
+}
+
+/* select {
+	width: 1vw;
+} */

@@ -37,14 +37,14 @@
 			<artifactId>tomcat-embed-jasper</artifactId>
 			<scope>provided</scope>
 		</dependency>
-			<!-- jstl -->
-		<!--
-		https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
-		<!--<dependency>
+		<!--  jstl  -->
+		<!--  https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api  -->
+		<dependency>
 			<groupId>jakarta.servlet.jsp.jstl</groupId>
 			<artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
-			<version>3.0.0</version>$NO-MVN-MAN-VER$
-		</dependency>-->
+			<version>3.0.0</version>
+			<!-- $NO-MVN-MAN-VER$ -->
+		</dependency>
 
 		<!--
 		https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->

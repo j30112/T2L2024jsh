@@ -5,21 +5,21 @@
 
 	
 	<select id="resultInfo" parameterType="int" resultType="com.t2lJsh.t2lJsh.dto.Result_info">
-	SELECT 
-		wu.DOC_NO
-		,wu.JBGD_NM
-		,wu.WRT_NM
-		,wu.WRT_TM
-		,wr.DMND_MTTR
-		,o.EVLTR_NM1
-		,o.EVL_CN1
-		,o.EVL_RSLT_CN1
-		,o.EVL_CN_CEO
-		,o.EVL_RSLT_CN_CEO
-	FROM wrt_user wu
-		LEFT JOIN wish_req wr ON wu.DOC_NO = wr.DOC_NO
-		LEFT JOIN opinion o ON wr.DOC_NO = o.DOC_NO
-	WHERE wu.DOC_NO = #{docNo}
+		SELECT 
+			wu.DOC_NO
+			,wu.JBGD_NM
+			,wu.WRT_NM
+			,wu.WRT_TM
+			,wr.DMND_MTTR
+			,o.EVLTR_NM1
+			,o.EVL_CN1
+			,o.EVL_RSLT_CN1
+			,o.EVL_CN_CEO
+			,o.EVL_RSLT_CN_CEO
+		FROM wrt_user wu
+			LEFT JOIN wish_req wr ON wu.DOC_NO = wr.DOC_NO
+			LEFT JOIN opinion o ON wr.DOC_NO = o.DOC_NO
+		WHERE wu.DOC_NO = #{docNo}
 		
 	</select>
 	

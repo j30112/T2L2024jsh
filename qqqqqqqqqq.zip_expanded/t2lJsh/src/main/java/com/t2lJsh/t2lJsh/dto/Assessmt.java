@@ -18,6 +18,8 @@ public class Assessmt {
 	private int		qitem_no9;	//문항9 답변
 	private int		qitem_no10;	//문항10 답변
 	private int		sum_scr_b;	//점수 합계
+	private int		sum_scr_ab;	//점수 합계 AB
+	
 	
 	////////////버퍼용
 	
@@ -62,4 +64,52 @@ public class Assessmt {
 	private int twoChaQItemNo7;	//기술적 성취 5차 평가자
 	private int twoChaQItemNo8;	//기술적 성취 5차 평가자
 	private int twoChaQItemNo9;	//기술적 성취 6차 평가자
+	
+	
+	
+	
+	//버퍼 저장용 (이건 select..... 뭔가 이름 꼬일까봐 그냥 새로 만듦...)
+    private int upmuJagiQitem_no1; // INT(11) //업무능력 평가 자기평가
+    private int upmuJagiQitem_no2; // INT(11)
+    private int upmuJagiQitem_no3; // INT(11)
+    private int upmuJagiQitem_no4; // INT(11)
+    private int upmuJagiQitem_no5; // INT(11)
+    private int upmuJagiQitem_no6; // INT(11)
+    private int upmuJagiQitem_no7; // INT(11)
+    private int upmuJagiQitem_no8; // INT(11)
+    private int upmuJagiQitem_no9; // INT(11)
+    private int upmuJagiQitem_no10; // INT(11)
+    
+//    private int upmulchaQitem_no1; // INT(11) //업무능력 평가 1차평가
+//    private int upmulchaQitem_no2; // INT(11)
+//    private int upmulchaQitem_no3; // INT(11)
+//    private int upmulchaQitem_no4; // INT(11)
+//    private int upmulchaQitem_no5; // INT(11)
+//    private int upmulchaQitem_no6; // INT(11)
+//    private int upmulchaQitem_no7; // INT(11)
+//    private int upmulchaQitem_no8; // INT(11)
+//    private int upmulchaQitem_no9; // INT(11)
+//    private int upmulchaQitem_no10; // INT(11)
+//    
+//    
+//    private int gisulJagiQitem_no1; // INT(11) //기술평가 자기평가
+//    private int gisulJagiQitem_no2; // INT(11)
+//    private int gisulJagiQitem_no3; // INT(11)
+//    private int gisulJagiQitem_no4; // INT(11)
+//    private int gisulJagiQitem_no5; // INT(11)
+//    private int gisulJagiQitem_no6; // INT(11)
+//    private int gisulJagiQitem_no7; // INT(11)
+//    private int gisulJagiQitem_no8; // INT(11)
+//    private int gisulJagiQitem_no9; // INT(11)
+//    
+//    
+//    private int gisulPyeonggaQitem_no1; // INT(11) //기술평가 평가자들
+//    private int gisulPyeonggaQitem_no2; // INT(11) //기술평가 평가자들
+//    private int gisulPyeonggaQitem_no3; // INT(11) //기술평가 평가자들
+//    private int gisulPyeonggaQitem_no4; // INT(11) //기술평가 평가자들
+//    private int gisulPyeonggaQitem_no5; // INT(11) //기술평가 평가자들
+//    private int gisulPyeonggaQitem_no6; // INT(11) //기술평가 평가자들
+//    private int gisulPyeonggaQitem_no7; // INT(11) //기술평가 평가자들
+//    private int gisulPyeonggaQitem_no8; // INT(11) //기술평가 평가자들
+//    private int gisulPyeonggaQitem_no9; // INT(11) //기술평가 평가자들
 }
