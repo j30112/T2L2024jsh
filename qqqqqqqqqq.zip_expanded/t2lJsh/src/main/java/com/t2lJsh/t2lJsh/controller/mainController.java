@@ -149,28 +149,6 @@ public class mainController {
 			//희망사항
 			String dmnd_mttr = resultInfo.getDmnd_mttr();//희망사항
 			
-			//업무능력 자기평가 
-			/*int upmuJagiQitem_no1 = resultInfo.getUpmuJagiQitem_no1();
-			int upmuJagiQitem_no2 = resultInfo.getUpmuJagiQitem_no2();
-			int upmuJagiQitem_no3 = resultInfo.getUpmuJagiQitem_no3();
-			int upmuJagiQitem_no4 = resultInfo.getUpmuJagiQitem_no4();
-			int upmuJagiQitem_no5 = resultInfo.getUpmuJagiQitem_no5();
-			int upmuJagiQitem_no6 = resultInfo.getUpmuJagiQitem_no6();
-			int upmuJagiQitem_no7 = resultInfo.getUpmuJagiQitem_no7();
-			int upmuJagiQitem_no8 = resultInfo.getUpmuJagiQitem_no8();
-			int upmuJagiQitem_no9 = resultInfo.getUpmuJagiQitem_no9();
-			int upmuJagiQitem_no10 = resultInfo.getUpmuJagiQitem_no10();
-			//업무능력 1차 평가자
-			int upmulchaQitem_no1 = resultInfo.getUpmulchaQitem_no1();
-			int upmulchaQitem_no2 = resultInfo.getUpmulchaQitem_no2();
-			int upmulchaQitem_no3 = resultInfo.getUpmulchaQitem_no3();
-			int upmulchaQitem_no4 = resultInfo.getUpmulchaQitem_no4();
-			int upmulchaQitem_no5 = resultInfo.getUpmulchaQitem_no5();
-			int upmulchaQitem_no6 = resultInfo.getUpmulchaQitem_no6();
-			int upmulchaQitem_no7 = resultInfo.getUpmulchaQitem_no7();
-			int upmulchaQitem_no8 = resultInfo.getUpmulchaQitem_no8();
-			int upmulchaQitem_no9 = resultInfo.getUpmulchaQitem_no9();
-			int upmulchaQitem_no10 = resultInfo.getUpmulchaQitem_no10();*/
 			
 			//평가자 의견
 			String evltr_nm1 = resultInfo.getEvltr_nm1(); //1차 평가자명

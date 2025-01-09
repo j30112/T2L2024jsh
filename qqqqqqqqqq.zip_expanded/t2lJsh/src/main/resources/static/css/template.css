@@ -38,7 +38,7 @@ form {
 	margin-top: 0.5em;
 	margin-bottom: 50px;
 	border: solid 1px #D9D9D9;
-	font-size: 0.8vw;
+	font-size: 1.1vw;
 }
 .userInfoInsert1{
 	width: 20%;
@@ -89,14 +89,19 @@ form {
 }
 .ctgrSelect{
 	width: 40%;
-	border: solid 1px #D9D9D9;
-	font-size: 0.8vw;
+    border: solid 1px #D9D9D9;
+    font-size: 1.1vw;
+    height: 2.2vw;
 }
 .seongGwaPer{
-	font-size:0.8vw;
+	font-size:1.1vw;
 	height: 2.2vw;
 	width: 18%;
 	border: solid 1px #D9D9D9;
+}
+
+.seongGwaPer::placeholder{
+	font-size:0.8vw;
 }
 .ctgrTxtperIcon{
 	margin-left:1%;
@@ -105,7 +110,7 @@ form {
 	color: #D9D9D9;
 }
 .scoreA {
-        margin-top: -0.5%;
+        /*margin-top: -0.5%;*/
         display: flex;
         align-items: center;  /* 세로 정렬 */
         justify-content: center;  /* 가로 정렬 */
@@ -118,6 +123,7 @@ form {
     width: 30%;
     height: 2.2vw;
     border: solid 1px #D9D9D9;
+    font-size: 1.1vw;
     
 }
 .scoreA label {
@@ -132,7 +138,7 @@ textarea{
 	border: solid 1px #D9D9D9;
 	padding: 2% 5%;
 	/*font-size: 1.2em;*/
-	font-size: 1.2vw;
+	font-size: 1vw;
 }
 
 /* 텍스트아리아 클릭해도 바깥에 테두리 선 안 생기게 */
@@ -189,7 +195,7 @@ input[type='radio']:checked:after {
 	border: solid 1px #D9D9D9;
 	/*font-size: 2.2vw;*/
 	height: 1vw;
-	font-size: 0.7em;
+	font-size: 1vw;
 }
 #opinionTd2{
 	width: 40%;
@@ -299,8 +305,8 @@ input[type=number] {
 .textareaOpinionResult{
 	display: flex;                /* Flexbox를 사용 */
     align-items: center;          /* 세로 중앙 정렬 */
-	margin-left:1%;
-	text-align: left;
+	/*margin-left:1%;*/
+	/*text-align: left;*/
 	width: 90%;
 	height: 7.8em;
 	border: none;
@@ -326,6 +332,25 @@ input[type=number] {
 	margin-left: 3%;
 }
 
-/* select {
-	width: 1vw;
-} */
+select {
+	width: 5vw;
+    height: 1.5vw;
+    font-size: 0.9vw;
+} 
+
+
+.txtAreaResult{
+ 	white-space: pre-line; 
+ 	overflow-y: auto; 
+ 	border: 1px solid #ccc; 
+}
+
+.textareaOpinionResult, .textareaOpinionResult{
+	white-space: pre-line; 
+ 	overflow-y: auto; 
+ 	border: none;
+}
+
+textarea {
+	font-family: Arial, sans-serif; /* 동일한 폰트 패밀리 */
+}

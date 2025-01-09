@@ -144,7 +144,7 @@
     });
     
   	 function submitChk(){
-  		alert('start');
+  		//alert('start');
   		
   		if(frm.jbgd_nm.value == 0){
   			alert('직위를 선택해주세요.');
@@ -233,12 +233,12 @@
 		const qItem = qItemOrigin.length/3;
   		
   		var chkQitem = document.querySelectorAll('input[type="radio"]:checked');
-  		alert('chkQitem >> '+chkQitem.length);
+  		//alert('chkQitem >> '+chkQitem.length);
   		
   	    // 모든 라디오 버튼을 돌면서 하나라도 선택되었는지 확인
   	    
   	    console.log('chkQitem >> '+chkQitem+' qItem>> '+qItem);
-  	    alert('chkQitem != qItem >> '+chkQitem.length != qItem);
+  	    //alert('chkQitem != qItem >> '+chkQitem.length != qItem);
   	    if (chkQitem.length != qItem) {
   	        alert('모든 평가 항목을 체크해주세요.');
   	        return false; // 폼 제출을 중단

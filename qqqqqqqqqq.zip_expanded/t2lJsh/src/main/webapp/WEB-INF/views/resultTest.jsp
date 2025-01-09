@@ -62,9 +62,10 @@
 						
 					</div>
 					<!-- <div class="inputDetail"> -->
-					<div class="txtAreaResult">
+					<%-- <div class="txtAreaResult" >
 						${ctgr.prfmnc_cn_select }
-					</div>
+					</div> --%>
+					<textarea class="txtAreaResult" readonly="readonly">${ctgr.prfmnc_cn_select }</textarea>
 				</div>
 			</c:forEach>
 			
@@ -81,12 +82,12 @@
 			</div>
 			
 			<div id="inputDetail">
-				<div class="txtAreaResult">
+				<%-- <div class="txtAreaResult">
 					${dmnd_mttr }
-				</div>
-				<%-- <textarea name="dmnd_mtr" readonly="readonly">
+				</div> --%>
+				<textarea name="dmnd_mtr" class="txtAreaResult" readonly="readonly">
 					${dmnd_mttr }
-				</textarea> --%>
+				</textarea>
 			</div>
 		</div>
 		
@@ -474,12 +475,12 @@
 							<br> ( <label>${evltr_nm1 }</label> ) 
 						</td>
 						<td id="opinionTd2">
-							<div class="textareaOpinionResult">
+							<%-- <div class="textareaOpinionResult">
 								${evl_cn1 }
-							</div>
-							<!-- <textarea class="textareaOpinionResult" name="evl_cn1" readonly="readonly">
-								
-							</textarea> -->
+							</div> --%>
+							<textarea class="textareaOpinionResult" name="evl_cn1" readonly="readonly">
+								${evl_cn1 }
+							</textarea>
 						</td>
 						<td id="opinionTd3">등급
 							<br> 
@@ -491,9 +492,11 @@
 					<tr>
 						<td>대표이사</td>
 						<td>
-							<div class="textareaOpinionResult">
+						
+						<textarea class="textareaOpinionResult" readonly="readonly">${evl_cn_ceo }</textarea>
+							<%-- <div class="textareaOpinionResult">
 								${evl_cn_ceo }
-							</div>
+							</div> --%>
 							<!-- <textarea class="textareaOpinionResult" name="evl_cn_ceo" readonly="readonly">
 								
 							</textarea> -->
